@@ -40,11 +40,6 @@ set complete=.,t
 set ignorecase
 set smartcase
 
-" Color scheme
-colorscheme emacs
-"highlight NonText guibg=#060606
-"highlight Folded  guibg=#0A0A0A guifg=#9090D0
-
 " Numbers
 set number
 set numberwidth=5
@@ -52,13 +47,14 @@ set numberwidth=5
 "mark syntax errors with :signs
 let g:syntastic_enable_signs=1
 
-
 " Don't use Ex mode, use Q for formatting
 map Q gq
 
 " This is an alternative that also works in block mode, but the deleted
 " text is lost and it only works for putting the current register.
 "vnoremap p "_dp
+
+:set t_Co=256
 
 " syntax enable                     " Turn on syntax highlighting (compare with syntax on below)
 " Switch syntax highlighting on, when the terminal has colors
@@ -68,6 +64,13 @@ if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
   set incsearch                     " Highlight matches as you type
   set hlsearch                      " Highlight matches.
 endif
+
+
+" Color scheme
+colorscheme mychalk 
+highlight NonText guibg=#060606
+highlight Folded  guibg=#0A0A0A guifg=#9090D0
+
 
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
@@ -109,13 +112,13 @@ else
 
 endif " has("autocmd")
 
-" if has("folding")
-  " set foldenable
-  " set foldmethod=syntax
-  " set foldlevel=1
-  " set foldnestmax=2
-  " set foldtext=strpart(getline(v:foldstart),0,50).'\ ...\ '.substitute(getline(v:foldend),'^[\ #]*','','g').'\ '
-" endif
+if has("folding")
+  set foldenable
+  set foldmethod=syntax
+  set foldlevel=1
+  set foldnestmax=2
+  set foldtext=strpart(getline(v:foldstart),0,50).'\ ...\ '.substitute(getline(v:foldend),'^[\ #]*','','g').'\ '
+endif
 
 " Softtabs, 2 spaces
 set tabstop=2
