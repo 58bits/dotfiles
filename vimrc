@@ -54,7 +54,8 @@ map Q gq
 " text is lost and it only works for putting the current register.
 "vnoremap p "_dp
 
-:set t_Co=256
+"Will not work on Mac OS X - causes certain colors and characters to 'flash'.
+":set t_Co=256
 
 " syntax enable                     " Turn on syntax highlighting (compare with syntax on below)
 " Switch syntax highlighting on, when the terminal has colors
