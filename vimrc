@@ -55,7 +55,7 @@ map Q gq
 "vnoremap p "_dp
 
 "Will not work on Mac OS X - causes certain colors and characters to 'flash'.
-":set t_Co=256
+set t_Co=256
 
 " syntax enable                     " Turn on syntax highlighting (compare with syntax on below)
 " Switch syntax highlighting on, when the terminal has colors
@@ -68,7 +68,7 @@ endif
 
 
 " Color scheme
-colorscheme mychalk 
+colorscheme mydelek 
 highlight NonText guibg=#060606
 highlight Folded  guibg=#0A0A0A guifg=#9090D0
 
