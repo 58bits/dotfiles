@@ -151,7 +151,11 @@ imap <S-Tab> <C-P>
 vmap <Tab> >gv
 vmap <S-Tab> <gv
 nmap <S-Tab> <C-W><C-W>
-
+"Use CTRL-S for saving, also in Insert mode
+"Requires bash$ stty -ixon -ixoff to capture Ctrl-S
+noremap <C-s> :update<CR>
+cnoremap <C-s> <Esc>:update<CR>
+inoremap <C-s> <Esc>:update<CR>
 
 " Edit the README_FOR_APP (makes :R commands work)
 map <Leader>R :e doc/README_FOR_APP<CR>
