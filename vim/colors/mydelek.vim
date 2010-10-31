@@ -27,8 +27,8 @@ hi LineNr     ctermfg=Blue	   guifg=Blue
 hi ModeMsg    cterm=bold	   gui=bold
 hi MoreMsg    ctermfg=DarkGreen    gui=bold guifg=SeaGreen
 hi NonText    ctermfg=Blue	   gui=bold guifg=gray guibg=white
-hi Pmenu      guibg=LightBlue
-hi PmenuSel   ctermfg=White	   ctermbg=DarkBlue  guifg=White  guibg=DarkBlue
+hi Pmenu      ctermfg=Blue   ctermbg=232       gui=bold guibg=LightBlue
+hi PmenuSel   ctermfg=193	   ctermbg=233  guifg=#d7afff  guibg=Black
 hi Question   ctermfg=DarkGreen    gui=bold guifg=SeaGreen
 hi Search     ctermfg=NONE	   ctermbg=Yellow guibg=Yellow guifg=NONE
 hi SpecialKey ctermfg=DarkBlue	   guifg=Blue
