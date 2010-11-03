@@ -4,12 +4,16 @@
 " Updated by: Anthony Bouch <tony@58bits.com>
 " Last Change: 2010 Oct 30
 
+if has("gui_running")
+    set background=dark
+endif
+
 hi clear
 
 let colors_name = "mydelek"
 
 " Normal should come first
-hi Normal     guifg=Black  guibg=White
+hi Normal     guifg=White  guibg=Black
 hi Cursor     guifg=bg     guibg=fg
 hi lCursor    guifg=NONE   guibg=Cyan
 
@@ -23,11 +27,11 @@ hi ErrorMsg   ctermfg=White	   ctermbg=DarkRed  guibg=Red	    guifg=White
 hi FoldColumn ctermfg=DarkBlue	   ctermbg=Grey     guibg=Grey	    guifg=DarkBlue
 hi Folded     ctermbg=Grey	   ctermfg=DarkBlue guibg=LightGrey guifg=DarkBlue
 hi IncSearch  cterm=reverse	   gui=reverse
-hi LineNr     ctermfg=Blue	   guifg=Blue
+hi LineNr     ctermfg=Blue	   guifg=#a8b3e2
 hi ModeMsg    cterm=bold	   gui=bold
 hi MoreMsg    ctermfg=DarkGreen    gui=bold guifg=SeaGreen
 hi NonText    ctermfg=Blue	   gui=bold guifg=gray guibg=white
-hi Pmenu      ctermfg=Blue   ctermbg=232       gui=bold guibg=LightBlue
+hi Pmenu      ctermfg=Blue   ctermbg=232       gui=bold guibg=#222222
 hi PmenuSel   ctermfg=193	   ctermbg=233  guifg=#d7afff  guibg=Black
 hi Question   ctermfg=DarkGreen    gui=bold guifg=SeaGreen
 hi Search     ctermfg=NONE	   ctermbg=Yellow guibg=Yellow guifg=NONE
@@ -43,11 +47,11 @@ hi WildMenu   ctermfg=Black	   ctermbg=Yellow    guibg=Yellow guifg=Black
 
 " syntax highlighting
 hi Comment    cterm=NONE ctermfg=Magenta     gui=NONE guifg=magenta3
-hi Constant   cterm=NONE ctermfg=193         gui=NONE guifg=#d7afff
+hi Constant   cterm=NONE ctermfg=193         gui=NONE guifg=#f5f4cd
 hi Identifier cterm=NONE ctermfg=Cyan        gui=NONE guifg=cyan4
 hi PreProc    cterm=NONE ctermfg=DarkRed     gui=NONE guifg=red
 hi Special    cterm=NONE ctermfg=Red         gui=NONE guifg=deeppink
-hi Statement  cterm=bold ctermfg=Blue	       gui=bold guifg=blue
+hi Statement  cterm=bold ctermfg=Blue	       gui=bold guifg=#a8b3e2
 hi Define     cterm=bold ctermfg=81          gui=bold guifg=#5fd7ff
 hi Type	      cterm=NONE ctermfg=Blue	       gui=bold guifg=blue
 
