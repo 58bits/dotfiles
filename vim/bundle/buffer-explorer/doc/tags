@@ -8,9 +8,11 @@ bufexplorer-usage	bufexplorer.txt	/*bufexplorer-usage*
 bufexplorer-windowlayout	bufexplorer.txt	/*bufexplorer-windowlayout*
 bufexplorer.txt	bufexplorer.txt	/*bufexplorer.txt*
 buffer-explorer	bufexplorer.txt	/*buffer-explorer*
+g:bufExplorerChgWin	bufexplorer.txt	/*g:bufExplorerChgWin*
 g:bufExplorerDefaultHelp	bufexplorer.txt	/*g:bufExplorerDefaultHelp*
 g:bufExplorerDetailedHelp	bufexplorer.txt	/*g:bufExplorerDetailedHelp*
 g:bufExplorerFindActive	bufexplorer.txt	/*g:bufExplorerFindActive*
+g:bufExplorerFuncRef	bufexplorer.txt	/*g:bufExplorerFuncRef*
 g:bufExplorerReverseSort	bufexplorer.txt	/*g:bufExplorerReverseSort*
 g:bufExplorerShowDirectories	bufexplorer.txt	/*g:bufExplorerShowDirectories*
 g:bufExplorerShowRelativePath	bufexplorer.txt	/*g:bufExplorerShowRelativePath*
