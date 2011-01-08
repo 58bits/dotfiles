@@ -54,7 +54,7 @@ map Q gq
 " text is lost and it only works for putting the current register.
 "vnoremap p "_dp
 
-"Will not work on Mac OS X - causes certain colors and characters to 'flash'.
+"Will not work under Teminal.app on Mac OS X - causes certain colors and characters to 'flash'.
 set t_Co=256
 
 " syntax enable                     " Turn on syntax highlighting (compare with syntax on below)
@@ -122,8 +122,9 @@ if has("folding")
 endif
 
 " Softtabs, 2 spaces
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 set expandtab
 
 " Always display the status line
