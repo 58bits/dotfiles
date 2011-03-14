@@ -34,7 +34,7 @@ hi NonText    ctermfg=Blue	   gui=bold guifg=gray guibg=white
 hi Pmenu      ctermfg=Blue   ctermbg=232       gui=bold guibg=#222222
 hi PmenuSel   ctermfg=193	   ctermbg=233  guifg=#d7afff  guibg=Black
 hi Question   ctermfg=DarkGreen    gui=bold guifg=SeaGreen
-hi Search     ctermfg=NONE	   ctermbg=Yellow guibg=Yellow guifg=NONE
+hi Search     ctermfg=NONE	   ctermbg=240 guibg=#585858 guifg=NONE
 hi SpecialKey ctermfg=DarkBlue	   guifg=Blue
 hi StatusLine cterm=bold	   ctermbg=blue ctermfg=White guibg=gold guifg=blue
 hi StatusLineNC	cterm=bold	   ctermbg=blue ctermfg=black  guibg=gold guifg=blue
