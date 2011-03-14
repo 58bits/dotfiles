@@ -1,5 +1,6 @@
 " based on http://github.com/jferris/config_files/blob/master/vimrc
 " based on Peecode vim-full sample
+" based on http://www.pixelbeat.org/settings/.vimrc
 
 " Use Vim settings, rather then Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
@@ -53,24 +54,6 @@ map Q gq
 " This is an alternative that also works in block mode, but the deleted
 " text is lost and it only works for putting the current register.
 "vnoremap p "_dp
-
-"Will not work under Teminal.app on Mac OS X - causes certain colors and characters to 'flash'.
-set t_Co=256
-
-" syntax enable                     " Turn on syntax highlighting (compare with syntax on below)
-" Switch syntax highlighting on, when the terminal has colors
-" Also switch on highlighting the last used search pattern.
-if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
-  syntax on
-  set incsearch                     " Highlight matches as you type
-  set hlsearch                      " Highlight matches.
-endif
-
-
-" Color scheme
-colorscheme mydelek 
-highlight NonText guibg=#060606
-highlight Folded  guibg=#0A0A0A guifg=#9090D0
 
 
 " Only do this part when compiled with support for autocommands.
@@ -130,12 +113,63 @@ set expandtab
 " Always display the status line
 set laststatus=2
 
+""""""""""""""""""""""""""""""""""""""""""""""""
+" Syntax highlighting
+""""""""""""""""""""""""""""""""""""""""""""""""
+"Will not work under Teminal.app on Mac OS X - causes certain colors and characters to 'flash'.
+set t_Co=256
+
+" syntax enable                     " Turn on syntax highlighting (compare with syntax on below)
+" Switch syntax highlighting on, when the terminal has colors
+" Also switch on highlighting the last used search pattern.
+if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
+  syntax on
+  set incsearch                     " Highlight matches as you type
+  set hlsearch                      " Highlight matches.
+endif
+
+if &diff
+  "I'm only interested in diff colours
+  syntax off
+endif
+
+" Color scheme
+colorscheme mydelek 
+highlight NonText guibg=#060606
+highlight Folded  guibg=#0A0A0A guifg=#9090D0
+
+
+"syntax highlight shell scripts as per POSIX,
+"not the original Bourne shell which very few use
+let g:is_posix = 1
+
+"flag problematic whitespace (trailing and spaces before tabs)
+"Note you get the same by doing let c_space_errors=1 but
+"this rule really applys to everything.
+"highlight RedundantSpaces term=standout ctermbg=red guibg=red
+"match RedundantSpaces /\s\+$\| \+\ze\t/ "\ze sets end of match so only spaces highlighted
+"use :set list! to toggle visible whitespace on/off
+set listchars=tab:>-,trail:.,extends:>
+
+
 " Useful status information at bottom of screen
 "set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%{exists('g:loaded_rvm')?rvm#statusline():''}%=%-16(\ %l,%c-%v\ %)%P
 
+
+""""""""""""""""""""""""""""""""""""""""""""""""
+" Key bindings
+""""""""""""""""""""""""""""""""""""""""""""""""
 " \ is the leader character
 let mapleader = ","
+
+"allow deleting selection without updating the clipboard (yank buffer)
+vnoremap x "_x
+vnoremap X "_X
+
+"This is necessary to allow pasting from outside vim. It turns off auto stuff.
+"You can tell you are in paste mode when the ruler is not visible
+set pastetoggle=<F2>
 
 " Tab mappings.
 map <leader>tt :tabnew<cr>
@@ -226,11 +260,6 @@ imap <C-L> <Space>=><Space>
 command! Rroutes :e config/routes.rb
 command! Rschema :e db/schema.rb
 
-" Local config
-if filereadable(".vimrc.local")
-  source .vimrc.local
-endif
-
 " Use Ack instead of Grep when available
 if executable("ack")
   set grepprg=ack\ -H\ --nogroup\ --nocolor\ --ignore-dir=tmp\ --ignore-dir=coverage
@@ -275,3 +304,7 @@ map <Leader>w :call OpenURL()<CR>
 " For the MakeGreen plugin and Ruby RSpec. Uncomment to use.
 " autocmd BufNewFile,BufRead *_spec.rb compiler rspec
 
+" Local config
+if filereadable(".vimrc.local")
+  source .vimrc.local
+endif
