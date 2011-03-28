@@ -1,6 +1,6 @@
 " Maintainer:  Anthony Bouch (tony@58bits.com)
 " Last Change: 2011-03-24
-" Version:     1.0.0
+" Version:     1.0.1
 " License:     This script is free software; you can redistribute it and/or
 "              modify it under the terms of either the Artistic License or
 "              the GNU General Public License.
@@ -17,9 +17,9 @@
 " In order to tell Vim to use the correct filetype for editing, you must place
 " the following text on the first line of the template:
 
-" # template: xhtml
+" # filetype: xhtml
 
-" This will cause the vim filetype to be set to xhtml. The template definition
+" This will cause the vim filetype to be set to xhtml. The filetype definition
 " will then be removed from the newly created buffer.
 " 
 " To load a template use the 'Boost' command followed by the template name
