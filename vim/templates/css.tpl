@@ -1,3 +1,4 @@
+# filetype: css
 /* http://stevezeidner.com/html-and-css-starter-templates */
 /* reset styles */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
