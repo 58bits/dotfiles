@@ -1,5 +1,6 @@
 " Maintainer:  Anthony Bouch (tony@58bits.com)
-" Last Change: 2011-03-14
+" Last Change: 2011-03-24
+" Version:     1.0.0
 " License:     This script is free software; you can redistribute it and/or
 "              modify it under the terms of either the Artistic License or
 "              the GNU General Public License.
