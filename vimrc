@@ -30,6 +30,7 @@ set wildmenu                      " Enhanced command line completion.
 set nowrap			  " Switch wrap off for everything
 set scrolloff=3                   " Show 3 lines of context around the cursor.
 set title                         " Set the terminal's title
+set cpoptions+=$                  " Places a dollar sign at the end of the 'to be' changed text.
 
 " Tab completion options
 " (only complete to the longest unambiguous match, and show a menu)
@@ -186,6 +187,8 @@ imap <S-Tab> <C-P>
 vmap <Tab> >gv
 vmap <S-Tab> <gv
 nmap <S-Tab> <C-W><C-W>
+
+
 "Use CTRL-S for saving, also in Insert mode
 "Requires bash$ stty -ixon -ixoff to capture Ctrl-S
 noremap <C-s> :update<CR>
@@ -286,6 +289,11 @@ function! OpenURL()
   endif
 endfunction
 map <Leader>w :call OpenURL()<CR>
+
+"Set F9 to toggle line numbers in normal mode
+nmap <F9> :set invnumber<CR>
+"Set F9 to toggle paste mode in insert mode.
+set pastetoggle=<F9>
 
 " Uncomment to use Jamis Buck's file opening plugin
 "map <Leader>t :FuzzyFinderTextMate<Enter>
