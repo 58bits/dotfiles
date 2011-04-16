@@ -19,8 +19,9 @@ del { text-decoration: line-through; }
 table { border-collapse: collapse; border-spacing: 0; }
  
 body {
-    font-size: 62.5%;
-    text-align: center;
+    font-size: 95%;
+    font-family: Arial, Verdana;
+    text-align: left;
     color: #000000;
 }
  
@@ -69,7 +70,6 @@ body {
  
 /*--- content section - put whatever you want here ---*/
 #content {
-    font: 1.2em Verdana, Arial, Helvetica, sans-serif;
 }
  
 /*--- footer section - put whatever you want here ---*/
