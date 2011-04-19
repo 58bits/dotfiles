@@ -164,6 +164,10 @@ set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%{exists('*Cap
 " \ is the leader character
 let mapleader = ","
 
+"all Enter to be used to create a new blank line and return to normal mode.
+map <CR> O<Esc>j
+map <S-Enter> o<Esc>k
+
 "allow deleting selection without updating the clipboard (yank buffer)
 vnoremap x "_x
 vnoremap X "_X
