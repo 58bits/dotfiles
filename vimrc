@@ -167,6 +167,8 @@ let mapleader = ","
 "all Enter to be used to create a new blank line and return to normal mode.
 map <CR> O<Esc>j
 map <S-Enter> o<Esc>k
+"map toggle vertical split for NERDTree
+map <F2> :NERDTreeToggle<CR>
 
 "allow deleting selection without updating the clipboard (yank buffer)
 vnoremap x "_x
