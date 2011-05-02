@@ -167,8 +167,18 @@ let mapleader = ","
 "all Enter to be used to create a new blank line and return to normal mode.
 map <CR> O<Esc>j
 map <S-Enter> o<Esc>k
+"
 "map toggle vertical split for NERDTree
 map <F2> :NERDTreeToggle<CR>
+"
+"Map spacebar to buffer explorer.
+nmap <Space> <leader>be
+"
+"Map <Esc> to <Esc>`^ which will prevent the curser from moving back a space
+"after leaving insert mode.
+"inoremap <Esc> <Esc>`^
+"Also map the backtick ' - to leave escape mode.
+"inoremap ` <Esc>`^
 
 "allow deleting selection without updating the clipboard (yank buffer)
 vnoremap x "_x
@@ -176,7 +186,9 @@ vnoremap X "_X
 
 "This is necessary to allow pasting from outside vim. It turns off auto stuff.
 "You can tell you are in paste mode when the ruler is not visible
-set pastetoggle=<F2>
+"NOTE: This has been set above at F9 - and F2 has been remapped to NERDTree
+"toggle.
+"set pastetoggle=<F2>
 
 " Tab mappings.
 map <leader>tt :tabnew<cr>
