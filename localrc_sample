@@ -1,0 +1,17 @@
+PATH=$PATH:$HOME/Scripts
+export PATH
+TERMINFO=/lib/terminfo
+export TERMINFO
+alias l="ls -lAh --color=auto"
+alias c="clear"
+alias s="cd ~/Scripts"
+alias ..="cd .."
+alias ..2="cd ../.."
+alias ..3="cd ../../.."
+alias ..4="cd ../../../.."
+alias ..5="cd ../../../../.."
+stty -ixon -ixoff 
+export EDITOR='vim'
+[[ -s "/usr/local/rvm/scripts/rvm" ]] && source "/usr/local/rvm/scripts/rvm"
+[[ -s "/usr/local/rvm/contrib/ps1_functions" ]] && source "/usr/local/rvm/contrib/ps1_functions"
+ps1_set --prompt ∴
