@@ -1,7 +1,87 @@
-. ~/.zsh/aliases
+
+# ls
+alias ls="ls -F"
+alias l="ls -lAh --color=auto"
+alias ll="ls -l"
+alias la='ls -A'
+alias c="clear"
+alias ..="cd .."
+alias ..2="cd ../.."
+alias ..3="cd ../../.."
+alias ..4="cd ../../../.."
+alias ..5="cd ../../../../.."
+
 
 # changing directory to code project
 function p { cd ~/Projects/$1; }
+# changing directory to code scripts
+function s { cd ~/Scripts/$1; }
+
+# Git
+alias g="git status"
+alias ga="git add"
+alias gaa="git add --all"
+alias gc="git commit -m"
+alias gca="git commit -am"
+alias gb="git branch"
+alias gba="git branch -a"
+alias gbd="git branch -d"
+alias gco="git checkout"
+alias gcob="git checkout -b"
+alias gm="git merge"
+alias gr="git rebase"
+alias gl="git log"
+alias gs="git status"
+alias gsh="git show"
+alias gd="git diff"
+alias gbl="git blame"
+alias gps="git push"
+alias gpl="git pull"
+alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
+
+# Ruby
+alias r="ruby"
+alias i="irb"
+alias rk="rake"
+alias rkt="rake -T | mate"
+alias b="bundle"
+alias be="bundle exec"
+alias bi="bundle install"
+
+# Rails
+# console
+function sc() {
+  if [ -x script/rails ]; then
+    script/rails console $1
+  else
+    script/console $1
+  fi
+}
+# server
+function ss() {
+  if [ -x script/rails ]; then
+    script/rails server thin $@
+  else
+    script/server $@
+  fi
+}
+# generator
+function sg() {
+  if [ -x script/rails ]; then
+    script/rails generate $@
+  else
+    script/generate $@
+  fi
+}
+
+# other
+alias rkdm="rake db:migrate"
+alias rkdmr="rake db:migrate:redo"
+alias rkdr="rake db:rollback"
+alias rkdc="rake db:create"
+alias rklc="rake log:clear"
+alias rkr="rake routes | vim"
+
 
 # alternative to "rails" command to use templates
 #function railsapp {
