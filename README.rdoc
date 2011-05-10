@@ -20,6 +20,8 @@ Ryan is running on Mac OS X, whereas this repo was creatd on Ubuntu.
 
 See Ryan's original feature notes at http://github.com/ryanb/dotfiles
 
-At the moment the only changes from those are the updated vim setup
-to use the pathogen plugin loader and a combined vimrc file
-with additional settings from the Peepcode tutorials.
+Siwtched back to Bash shell for now. Nice PS1 prompt from Wayne E. Seguin (of RVM fame)
+http://beginrescueend.com/ which is now in the bash/functions directory - so that 
+it can be sourced before RVM is installed. 
+
+Also contains my cleaned-up Vim config and plugins.
