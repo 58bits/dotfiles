@@ -1,3 +1,6 @@
+#Enable color LS on Mac OSX/BSD
+export CLICOLOR=1
+
 export PS1="\w$ "
 export TERMINFO=/lib/terminfo
 stty -ixon -ixoff 
