@@ -1,1 +1,2 @@
 supertab.vba: call delete('/home/tony/.vim/doc/supertab.txt')|call delete('/home/tony/.vim/plugin/supertab.vim')
+zenburn.vba: call delete('/home/tony/.vim/colors/zenburn.vim')
