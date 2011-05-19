@@ -1,7 +1,20 @@
-
 # ls
-alias ls="ls -F"
-alias l="ls -lAh --color=auto"
+# set default flags
+if grep --color=auto --quiet "" "$HOME"/.bashrc >/dev/null 2>&1
+then
+  alias grep='grep --color=auto'
+fi
+
+if ls --color=never --directory / >/dev/null 2>&1
+then
+  # enable colors with GNU ls
+  alias ls='ls --color=auto'
+  alias l='ls -lAh --color=auto'
+else
+  alias ls='ls -F'
+  alias l='ls -lAh'
+fi
+
 alias ll="ls -l"
 alias la='ls -A'
 alias c="clear"
