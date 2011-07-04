@@ -17,7 +17,7 @@ fi
 
 alias ll="ls -l"
 alias la='ls -A'
-alias c="clear"
+alias cl="clear"
 alias ..="cd .."
 alias ..2="cd ../.."
 alias ..3="cd ../../.."
@@ -25,9 +25,11 @@ alias ..4="cd ../../../.."
 alias ..5="cd ../../../../.."
 
 
-# changing directory to code project
+# changing directory to project
 function p { cd ~/Projects/$1; }
-# changing directory to code scripts
+# changing directory to code project
+function c { cd ~/Code/$1; }
+# changing directory to scripts
 function s { cd ~/Scripts/$1; }
 
 # Git
