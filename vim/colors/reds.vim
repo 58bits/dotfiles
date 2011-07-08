@@ -61,7 +61,7 @@ hi Keyword             cterm=NONE ctermfg=214                  guifg=#FF6600
 hi Define              cterm=NONE ctermfg=167         gui=NONE guifg=#FF6600
 hi Comment             cterm=NONE ctermfg=Magenta                   guifg=#9933CC
 hi Type                cterm=NONE ctermfg=Blue       gui=NONE guifg=White
-hi rubySymbol          cterm=NONE ctermfg=41          gui=NONE guifg=#339999 
+hi rubySymbol          cterm=NONE ctermfg=186          gui=NONE guifg=#339999 
 hi Identifier          cterm=NONE ctermfg=250       gui=NONE guifg=White 
 hi rubyStringDelimiter cterm=NONE ctermfg=196         gui=NONE guifg=#66FF00
 hi rubyInterpolation  cterm=NONE ctermfg=White       gui=NONE guifg=White
