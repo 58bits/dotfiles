@@ -1,6 +1,6 @@
 = Anthony Bouch's Dot Files 
 
-Base on Ryan Bates' excellent Dot Files repository.
+Based on Ryan Bates' excellent Dot Files repository.
 The included rake file and setup runs fine on Linux as well.
 
 == Installation
