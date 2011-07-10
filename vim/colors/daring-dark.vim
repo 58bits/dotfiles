@@ -36,7 +36,7 @@ hi PmenuSel   ctermfg=193 ctermbg=233                   guifg=#d7afff guibg=Blac
 hi Question   ctermfg=DarkGreen                         gui=bold guifg=SeaGreen
 hi Search     ctermfg=NONE ctermbg=240                  guifg=NONE guibg=#585858   
 hi SpecialKey ctermfg=DarkBlue                          guifg=Blue
-hi StatusLine cterm=reverse ctermbg=White ctermfg=Blue  guifg=#5f5fff guibg=White      
+hi StatusLine cterm=reverse ctermbg=White ctermfg=Blue  gui=reverse guifg=#5f5fff guibg=White      
 hi StatusLineNC	ctermbg=Black ctermfg=Blue              guifg=#5f5fff guibg=Black      
 hi Title      ctermfg=DarkMagenta                       gui=bold guifg=Magenta
 hi VertSplit  cterm=reverse	                            gui=reverse guifg=#dddddd guibg=#222222
