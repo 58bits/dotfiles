@@ -93,4 +93,3 @@ source ~/.bash/config
 if [ -f ~/.localrc ]; then
   . ~/.localrc
 fi
-[[ -s "/usr/local/rvm/scripts/rvm" ]] && source "/usr/local/rvm/scripts/rvm"

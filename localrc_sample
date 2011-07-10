@@ -1,0 +1,4 @@
+# Machine specific settings can go here. System wide RVM install is shown as 
+# an example below.
+ 
+[[ -s "/usr/local/rvm/scripts/rvm" ]] && source "/usr/local/rvm/scripts/rvm"
