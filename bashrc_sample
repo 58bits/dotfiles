@@ -100,3 +100,5 @@ if [[ -n "$PS1" ]] ; then
 fi
 
 [[ -s "/usr/local/rvm/scripts/rvm" ]] && source "/usr/local/rvm/scripts/rvm"
+[[ -s "$HOME/.dotfiles/bash/functions/ps1_functions" ]] && source "$HOME/.dotfiles/bash/functions/ps1_functions"
+ps1_set --prompt ∴
