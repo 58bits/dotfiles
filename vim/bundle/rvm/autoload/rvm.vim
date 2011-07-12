@@ -16,16 +16,19 @@ set cpo&vim
 function! rvm#statusline()
   let status = ''
 
-  if !empty($rvm_ruby_interpreter)
-    let status = $rvm_ruby_interpreter.' '.$rvm_ruby_version
-  elseif !empty($rvm_ruby_string)
-    " If there is a default ruby $rvm_ruby_interpreter is empty, so fall back
-    " to $rvm_ruby_string
-    let status = $rvm_ruby_string
-  endif
-
-  if !empty($rvm_gemset_name)
-    let status = status.'@'.$rvm_gemset_name
+  " Are we even using rvm?
+  if !empty($rvm_path)
+    if !empty($GEM_PATH)
+      let status = substitute(split($GEM_PATH, ':')[0], '.*/', '', '')
+    else
+      let status = ''
+    end
+    " I can't decide if we need this: is there ever a case where
+    " GEM_PATH is empty but RUBY_VERSION is _not_ empty?
+    "
+    " if empty(status)
+      " let status = $RUBY_VERSION
+    " endif
   endif
 
   if !empty(status)
