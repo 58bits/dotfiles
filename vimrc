@@ -6,8 +6,10 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
-silent! call pathogen#runtime_append_all_bundles()
-silent! call pathogen#helptags()
+source ~/.vim/bundle/pathogen/autoload/pathogen.vim
+
+silent! call pathogen#infect()
+" silent! call pathogen#helptags()
 
 filetype plugin indent on         " Turn on file type detection.
 
