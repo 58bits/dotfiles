@@ -6,8 +6,11 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
+" Source pathogen. In this case it's in a bundle directory and not the 
+" Vim autoload directory (and is managed as a git subrepository) 
 source ~/.vim/bundle/pathogen/autoload/pathogen.vim
 
+" Now call pathogen
 silent! call pathogen#infect()
 " silent! call pathogen#helptags()
 
@@ -169,13 +172,16 @@ let mapleader = ","
 "all Enter to be used to create a new blank line and return to normal mode.
 map <CR> O<Esc>j
 map <S-Enter> o<Esc>k
-"
+
+
 "map toggle vertical split for NERDTree
 map <F2> :NERDTreeToggle<CR>
-"
+
+
 "Map spacebar to buffer explorer.
 nmap <Space> <leader>be
-"
+
+
 "Map <Esc> to <Esc>`^ which will prevent the curser from moving back a space
 "after leaving insert mode.
 "inoremap <Esc> <Esc>`^
@@ -191,6 +197,7 @@ vnoremap X "_X
 "NOTE: This has been set above at F9 - and F2 has been remapped to NERDTree
 "toggle.
 "set pastetoggle=<F2>
+
 
 " Tab mappings.
 map <leader>tt :tabnew<cr>
@@ -314,6 +321,9 @@ map <Leader>w :call OpenURL()<CR>
 nmap <F9> :set invnumber<CR>
 "Set F9 to toggle paste mode in insert mode.
 set pastetoggle=<F9>
+
+"Markdown to HTML  
+nmap <Leader>md :%!/usr/local/bin/Markdown.pl --html4tags<CR>
 
 " Uncomment to use Jamis Buck's file opening plugin
 "map <Leader>t :FuzzyFinderTextMate<Enter>
