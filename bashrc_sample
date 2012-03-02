@@ -9,6 +9,10 @@
 
 if [[ -n "$PS1" ]] ; then
 
+    export LANGUAGE=en_US.UTF-8
+    export LANG=en_US.UTF-8
+    export LC_ALL=en_US.UTF-8
+
     # don't put duplicate lines in the history. See bash(1) for more options
     # ... or force ignoredups and ignorespace
     HISTCONTROL=ignoredups:ignorespace
