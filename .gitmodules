@@ -7,3 +7,12 @@
 [submodule "vim/bundle/fugitive"]
 	path = vim/bundle/fugitive
 	url = https://github.com/tpope/vim-fugitive.git
+[submodule "vim/bundle/hammer"]
+	path = vim/bundle/hammer
+	url = git://github.com/robgleeson/hammer.vim.git
+[submodule "vim/bundle/vim-preview"]
+	path = vim/bundle/vim-preview
+	url = git://github.com/greyblake/vim-preview.git
+[submodule "vim/bundle/textile"]
+	path = vim/bundle/textile
+	url = git://github.com/timcharper/textile.vim.git
