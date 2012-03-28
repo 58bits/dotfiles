@@ -24,6 +24,8 @@ alias ..3="cd ../../.."
 alias ..4="cd ../../../.."
 alias ..5="cd ../../../../.."
 
+#Growl notification
+growl() { echo -e $'\e]9;'${1}'\007' ; return  ; }
 
 # changing directory to project
 function p { cd ~/Projects/$1; }
@@ -31,6 +33,7 @@ function p { cd ~/Projects/$1; }
 function c { cd ~/Code/$1; }
 # changing directory to scripts
 function s { cd ~/Scripts/$1; }
+
 
 # Git
 alias g="git status"
@@ -75,7 +78,7 @@ function sc() {
 # server
 function ss() {
   if [ -x script/rails ]; then
-    script/rails server thin $@
+    thin start $@
   else
     script/server $@
   fi
@@ -99,12 +102,11 @@ alias rkr="rake routes | vim"
 
 
 # alternative to "rails" command to use templates
-#function railsapp {
-#  template=$1
-#  appname=$2
-#  shift 2
-#  rails $appname -m http://github.com/ryanb/rails-templates/raw/master/$template.rb $@
-#}
+function railsapp {
+ appname=$1
+ shift 1
+ rails new $appname -m https://raw.github.com/RailsApps/rails3-application-templates/master/rails3-devise-rspec-cucumber-template.rb -T
+}
 
 # misc
 alias reload='. ~/.bash_profile'

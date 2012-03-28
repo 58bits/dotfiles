@@ -3,7 +3,7 @@
 " with lower resolution.
 
 set guioptions-=T " hide toolbar
-set lines=45 columns=144 
-winpos 30 1021 
+set lines=47 columns=152 
+winpos 0 1045 
 " set guifont=Monaco:h18
 set guifont=Bitstream\ Vera\ Sans\ Mono:h18
