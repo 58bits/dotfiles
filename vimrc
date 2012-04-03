@@ -61,6 +61,11 @@ map Q gq
 " text is lost and it only works for putting the current register.
 "vnoremap p "_dp
 
+" Softtabs, 4 spaces
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
 
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
@@ -76,6 +81,9 @@ if has("autocmd")
   " Enable soft-wrapping for text files
   autocmd FileType text,markdown,html,xhtml,eruby setlocal wrap linebreak nolist
 
+  " Set tab and shitwidth settings for ruby
+  autocmd FileType ruby setlocal shiftwidth=2 tabstop=2 softtabstop=2
+  
   " Put these in an autocmd group, so that we can delete them easily.
   augroup vimrcEx
   au!
@@ -110,11 +118,6 @@ if has("folding")
   set foldtext=strpart(getline(v:foldstart),0,50).'\ ...\ '.substitute(getline(v:foldend),'^[\ #]*','','g').'\ '
 endif
 
-" Softtabs, 2 spaces
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
-set expandtab
 
 " Always display the status line
 set laststatus=2

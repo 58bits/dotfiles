@@ -1,8 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_cnt =7
 let g:netrw_dirhist_1='/home/tony/Projects/ruby/utils/.git'
 let g:netrw_dirhist_2='/home/tony/Projects/rails/sample_app/db/migrate'
 let g:netrw_dirhist_3='/home/tony/Projects/photos_web/spec'
 let g:netrw_dirhist_4='/home/tony/Amanda'
 let g:netrw_dirhist_5='/home/tony/Projects/amm/app'
 let g:netrw_dirhist_6='/home/tony/Projects/amm/.git'
+let g:netrw_dirhist_7='/Users/tony/Code/ariane/lib/ariane'
