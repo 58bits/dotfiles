@@ -35,7 +35,7 @@ it can be sourced before RVM is installed.
 The Bitstream Vera Sans Mono fonts are also included in the repo.
 http://www-old.gnome.org/fonts/
 http://ftp.gnome.org/pub/GNOME/sources/ttf-bitstream-vera/1.10/
-http://www.58bits.com/blog/2011/03/15/a-beautiful-developer's-font/
+http://www.58bits.com/blog/2011/03/15/a-beautiful-developer%E2%80%99s-font/
 
 You'll need to update your .gvimrc accordingly if you choose not to use Vera Sans Mono.
 
