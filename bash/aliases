@@ -15,6 +15,10 @@ else
   alias l='ls -lAh'
 fi
 
+
+#Mvim
+alias v='mvim'
+
 alias ll="ls -l"
 alias la='ls -A'
 alias cl="clear"

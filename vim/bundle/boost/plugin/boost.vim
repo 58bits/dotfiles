@@ -35,6 +35,8 @@
 if exists( 'g:loaded_boost' ) | finish | endif
 let g:loaded_boost = 1
 
+let s:rel_tmpl_path = 'templates'
+
 function! s:globpathlist( path, ... )
     let i = 1
     let result = a:path
@@ -47,7 +49,7 @@ function! s:globpathlist( path, ... )
 endfunction
 
 function! s:loadtemplate( template )
-    let templatefile = matchstr( s:globpathlist( &runtimepath, 'templates', a:template . '.tpl' ), '\(\\.\|[^,]\)*', 0 )
+    let templatefile = matchstr( s:globpathlist( &runtimepath, s:rel_tmpl_path, a:template . '.tpl' ), '\(\\.\|[^,]\)*', 0 )
     if strlen( templatefile ) == 0 | return | endif
     silent execute 1 'read' templatefile
     1 delete _
@@ -78,4 +80,18 @@ function! s:setfiletype()
     endif
 endfunction
 
-command -nargs=1 Boost call s:loadtemplate( <f-args> ) 
+function! s:complete(A, C, P)
+    let abs_tmpl_path = s:globpathlist(&runtimepath, s:rel_tmpl_path)
+    let cmplstr = system("find ".abs_tmpl_path." -type f -name \"*tpl\"")
+    let list = split(cmplstr, "\n")
+    let list = map(list, 'substitute(v:val, "^.*/".s:rel_tmpl_path."/\\ze.\\+\\.tpl", "", "") ')
+    let list = map(list, 'substitute(v:val, ".\\+\\zs\\.tpl", "", "")')
+    let cmplstr = join(list, "\n")
+    return cmplstr
+endfunction
+
+if !has("win16") && !has("win32")
+    command! -complete=custom,s:complete -nargs=1 Boost call s:loadtemplate( <f-args> )
+else
+    command! -nargs=1 Boost call s:loadtemplate( <f-args> )
+endif
