@@ -203,21 +203,23 @@ vnoremap X "_X
 
 
 " Tab mappings.
-map <leader>tt :tabnew<cr>
-map <leader>te :tabedit
-map <leader>tc :tabclose<cr>
-map <leader>to :tabonly<cr>
-map <leader>tn :tabnext<cr>
-map <leader>tp :tabprevious<cr>
-map <leader>tf :tabfirst<cr>
-map <leader>tl :tablast<cr>
-map <leader>tm :tabmove
-imap <Tab> <C-N>
-imap <S-Tab> <C-P>
-vmap <Tab> >gv
-vmap <S-Tab> <gv
-nmap <S-Tab> <C-W><C-W>
+" map <leader>tt :tabnew<cr>
+" map <leader>te :tabedit
+" map <leader>tc :tabclose<cr>
+" map <leader>to :tabonly<cr>
+" map <leader>tn :tabnext<cr>
+" map <leader>tp :tabprevious<cr>
+" map <leader>tf :tabfirst<cr>
+" map <leader>tl :tablast<cr>
+" map <leader>tm :tabmove
+" imap <Tab> <C-N>
+" imap <S-Tab> <C-P>
+" vmap <Tab> >gv
+" vmap <S-Tab> <gv
+" nmap <S-Tab> <C-W><C-W>
 
+
+noremap <C-c> :TComment<CR>
 
 "Use CTRL-S for saving, also in Insert mode
 "Requires bash$ stty -ixon -ixoff to capture Ctrl-S
