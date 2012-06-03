@@ -219,7 +219,15 @@ vnoremap X "_X
 " nmap <S-Tab> <C-W><C-W>
 
 
-noremap <C-c> :TComment<CR>
+"TComment toggle mapping
+noremap <Leader>cc  :TComment<CR>
+
+"Textile preview settings and mapping
+let g:TextileBrowser="Google Chrome"
+noremap <leader>pt :TextilePreview<CR>
+
+"Markdown preview"
+noremap <leader>pm :Mm<CR>
 
 "Use CTRL-S for saving, also in Insert mode
 "Requires bash$ stty -ixon -ixoff to capture Ctrl-S
