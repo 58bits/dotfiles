@@ -222,6 +222,9 @@ vnoremap X "_X
 "TComment toggle mapping
 noremap <Leader>cc  :TComment<CR>
 
+"CommandT command
+noremap <Leader>z  :CommandT<CR>
+
 "Textile preview settings and mapping
 let g:TextileBrowser="Google Chrome"
 noremap <leader>pt :TextilePreview<CR>
