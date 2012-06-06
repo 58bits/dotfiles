@@ -27,7 +27,7 @@ hi ErrorMsg   ctermfg=White	ctermbg=DarkRed             guifg=White guibg=Red
 hi FoldColumn ctermfg=DarkBlue ctermbg=Grey             guifg=DarkBlue guibg=Grey	    
 hi Folded     ctermbg=Grey	ctermfg=DarkBlue            guifg=DarkBlue  guibg=LightGrey 
 hi IncSearch  cterm=reverse	                            gui=reverse
-hi LineNr     ctermfg=Blue	                            guifg=#5f5fff
+hi LineNr     ctermfg=239	                            guifg=#4e4e4e
 hi ModeMsg    cterm=bold                                gui=bold
 hi MoreMsg    ctermfg=DarkGreen                         gui=bold guifg=SeaGreen
 hi NonText    ctermfg=Blue                              gui=bold guifg=gray guibg=white

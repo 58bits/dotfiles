@@ -182,7 +182,7 @@ map <F2> :NERDTreeToggle<CR>
 "Map spacebar to buffer explorer.
 "nmap <Space> <leader>be
 "
-Map spacebar to CommandTBuffer
+"Map spacebar to CommandTBuffer
 nmap <Space> :CommandTBuffer<CR>
 
 "CommandT command
