@@ -176,14 +176,33 @@ let mapleader = ","
 map <CR> O<Esc>j
 map <S-Enter> o<Esc>k
 
-
 "map toggle vertical split for NERDTree
 map <F2> :NERDTreeToggle<CR>
 
-
 "Map spacebar to buffer explorer.
-nmap <Space> <leader>be
+"nmap <Space> <leader>be
+"
+Map spacebar to CommandTBuffer
+nmap <Space> :CommandTBuffer<CR>
 
+"CommandT command
+noremap <Leader>z  :CommandT<CR>
+
+"TComment toggle mapping
+noremap <Leader>cc  :TComment<CR>
+
+"Textile preview settings and mapping
+let g:TextileBrowser="Google Chrome"
+noremap <leader>pt :TextilePreview<CR>
+
+"Markdown preview"
+noremap <leader>pm :Mm<CR>
+
+"Use CTRL-S for saving, also in Insert mode
+"Requires bash$ stty -ixon -ixoff to capture Ctrl-S
+noremap <C-s> :update<CR>
+cnoremap <C-s> <Esc>:update<CR>
+inoremap <C-s> <Esc>:update<CR>
 
 "Map <Esc> to <Esc>`^ which will prevent the curser from moving back a space
 "after leaving insert mode.
@@ -219,24 +238,6 @@ vnoremap X "_X
 " nmap <S-Tab> <C-W><C-W>
 
 
-"TComment toggle mapping
-noremap <Leader>cc  :TComment<CR>
-
-"CommandT command
-noremap <Leader>z  :CommandT<CR>
-
-"Textile preview settings and mapping
-let g:TextileBrowser="Google Chrome"
-noremap <leader>pt :TextilePreview<CR>
-
-"Markdown preview"
-noremap <leader>pm :Mm<CR>
-
-"Use CTRL-S for saving, also in Insert mode
-"Requires bash$ stty -ixon -ixoff to capture Ctrl-S
-noremap <C-s> :update<CR>
-cnoremap <C-s> <Esc>:update<CR>
-inoremap <C-s> <Esc>:update<CR>
 
 " Edit the README_FOR_APP (makes :R commands work)
 map <Leader>R :e doc/README_FOR_APP<CR>

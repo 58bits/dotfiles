@@ -14,7 +14,8 @@ function f() {
 
 # lets toss an image onto my server and pbcopy that bitch.
 function scpp() {
-    scp -P 6122 "$1" tony@cloud01.akhua.com:~/public_html/58bits.com/public/i;
+    scp "$1" cloud01:~/public_html/58bits.com/public/i;
+    ssh cloud01 "chmod 644 ~/public_html/58bits.com/public/i/${1}"
     echo "http://www.58bits.com/i/$1" | pbcopy;
     echo "Copied to clipboard: http://www.58bits.com/i/$1"
 }
