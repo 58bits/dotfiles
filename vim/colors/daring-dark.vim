@@ -52,7 +52,7 @@ hi PreProc             cterm=NONE   ctermfg=DarkRed     gui=NONE    guifg=Red
 hi Special             cterm=NONE   ctermfg=Red         gui=NONE    guifg=Red
 hi Keyword             cterm=NONE   ctermfg=214         gui=NONE    guifg=#ffaf00
 hi Define              cterm=NONE   ctermfg=167         gui=NONE    guifg=#d75f5f
-hi Comment             cterm=NONE   ctermfg=56          gui=NONE    guifg=#5f00a7
+hi Comment             cterm=NONE   ctermfg=55          gui=NONE    guifg=#5f00af
 hi Type                cterm=NONE   ctermfg=Blue        gui=NONE    guifg=#5f5fff
 hi rubySymbol          cterm=NONE   ctermfg=186         gui=NONE    guifg=#d7d787 
 hi Identifier          cterm=NONE   ctermfg=250         gui=NONE    guifg=#bcbcbc 
