@@ -1,14 +1,15 @@
-" Vim color file
+" Vim color file%>
 " Last Updated by: Anthony Bouch <tony@58bits.com>
-" Last Change: 2011 Jul 9
+" Last Change: 2012 June 09
 
-if has("gui_running")
-    set background=dark
+set background=dark
+highlight clear
+
+if exists("syntax_on")
+  syntax reset
 endif
 
-hi clear
-
-let colors_name = "daring-dark"
+let g:colors_name = "daring-dark"
 
 " Normal should come first
 " hi Normal     guifg=White  guibg=Black
@@ -34,7 +35,7 @@ hi NonText    ctermfg=Blue                              gui=bold guifg=gray guib
 hi Pmenu      ctermfg=Blue ctermbg=232                  gui=bold guibg=#222222
 hi PmenuSel   ctermfg=193 ctermbg=233                   guifg=#d7afff guibg=Black
 hi Question   ctermfg=DarkGreen                         gui=bold guifg=SeaGreen
-hi Search     ctermfg=NONE ctermbg=240                  guifg=NONE guibg=#585858   
+hi Search     ctermfg=250 ctermbg=238                    guifg=#bcbcbc guibg=#444444   
 hi SpecialKey ctermfg=DarkBlue                          guifg=Blue
 hi StatusLine cterm=reverse ctermbg=White ctermfg=Blue  gui=reverse guifg=#5f5fff guibg=White      
 hi StatusLineNC	ctermbg=Black ctermfg=Blue              guifg=#5f5fff guibg=Black      
@@ -64,6 +65,5 @@ hi Function            cterm=NONE   ctermfg=75          gui=NONE    guifg=#5faff
 hi Include             cterm=NONE   ctermfg=220         gui=NONE    guifg=#ffd700 
 hi Statement           cterm=NONE   ctermfg=104         gui=NONE    guifg=#8787d7 
 hi String              cterm=NONE   ctermfg=187         gui=NONE    guifg=#d7d7af
-hi Search              cterm=NONE   ctermfg=White       gui=NONE    guibg=White
 
 " vim: sw=2
