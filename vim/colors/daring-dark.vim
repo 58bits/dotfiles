@@ -66,4 +66,9 @@ hi Include             cterm=NONE   ctermfg=220         gui=NONE    guifg=#ffd70
 hi Statement           cterm=NONE   ctermfg=104         gui=NONE    guifg=#8787d7 
 hi String              cterm=NONE   ctermfg=187         gui=NONE    guifg=#d7d7af
 
+hi xmlTag       cterm=NONE   ctermfg=75   gui=NONE   guifg=#5fafff
+hi xmlTagName   cterm=NONE   ctermfg=75   gui=NONE   guifg=#5fafff
+hi xmlEndTag    cterm=NONE   ctermfg=75   gui=NONE   guifg=#5fafff
+
+
 " vim: sw=2

@@ -172,6 +172,15 @@ set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%{exists('*Cap
 " \ is the leader character
 let mapleader = ","
 
+" Show syntax highlighting groups for word under cursor
+nmap <C-S-P> :call <SID>SynStack()<CR>
+function! <SID>SynStack()
+  if !exists("*synstack")
+    return
+  endif
+  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
+
 "all Enter to be used to create a new blank line and return to normal mode.
 "map <CR> O<Esc>j
 "map <S-Enter> o<Esc>k
