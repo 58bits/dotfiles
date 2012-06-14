@@ -51,6 +51,10 @@ set smartcase
 set number
 set numberwidth=5
 
+" Vim-slime settings
+let g:slime_target = "tmux"
+
+
 "mark syntax errors with :signs
 let g:syntastic_enable_signs=1
 
