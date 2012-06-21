@@ -65,10 +65,10 @@ map Q gq
 " text is lost and it only works for putting the current register.
 "vnoremap p "_dp
 
-" Softtabs, 4 spaces
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+" Softtabs, 2 spaces
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 set expandtab
 
 " Only do this part when compiled with support for autocommands.
