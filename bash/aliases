@@ -9,7 +9,7 @@ if ls --color=never --directory / >/dev/null 2>&1
 then
   # enable colors with GNU ls
   alias ls='ls --color=auto'
-  alias l='ls -lAh --color=auto'
+  alias l='ls -lAh --group-directories-first --color=auto'
 else
   alias ls='ls -F'
   alias l='ls -lAh'
