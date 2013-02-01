@@ -15,5 +15,4 @@ Thumbs.db
 .*.swp
 tags
 
-# Weird problem with command-t as a submodule - so cloned it's own repo
-# command-t/
+.netrwhist
