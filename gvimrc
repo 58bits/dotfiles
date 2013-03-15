@@ -6,4 +6,4 @@ set guioptions-=T " hide toolbar
 set lines=43 columns=110 
 " winpos 0 1045 
 " set guifont=Monaco:h18
-set guifont=Bitstream\ Vera\ Sans\ Mono:h18
+set guifont=Bitstream\ Vera\ Sans\ Mono:h17

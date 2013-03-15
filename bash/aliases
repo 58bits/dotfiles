@@ -15,6 +15,9 @@ else
   alias l='ls -lAh'
 fi
 
+alias ak1='ssh akhua01'
+alias fr1='ssh freeland01'
+
 # Extract anything
 extract () {
     if [ -f $1 ] ; then
