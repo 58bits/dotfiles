@@ -19,10 +19,16 @@ hi Cursor       guifg=Black     guibg=Grey
 hi lCursor      guifg=NONE      guibg=Cyan
 
 " Note: we never set 'term' because the defaults for B&W terminals are OK
-hi DiffAdd    ctermbg=LightBlue                         guibg=LightBlue
-hi DiffChange ctermbg=LightMagenta                      guibg=LightMagenta
-hi DiffDelete ctermfg=Blue	ctermbg=LightCyan           gui=bold guifg=Blue guibg=LightCyan
-hi DiffText   cterm=bold ctermbg=Red                    gui=bold guibg=Red
+highlight DiffAdd term=reverse cterm=bold ctermbg=green ctermfg=white 
+highlight DiffChange term=reverse cterm=bold ctermbg=cyan ctermfg=black 
+highlight DiffText term=reverse cterm=bold ctermbg=gray ctermfg=black 
+highlight DiffDelete term=reverse cterm=bold ctermbg=red ctermfg=black 
+
+"hi DiffAdd    ctermbg=LightBlue                         guibg=LightBlue
+"hi DiffChange ctermbg=LightMagenta                      guibg=LightMagenta
+"hi DiffDelete ctermfg=Blue	ctermbg=LightCyan           gui=bold guifg=Blue guibg=LightCyan
+"hi DiffText   cterm=bold ctermbg=Red                    gui=bold guibg=Red
+
 hi Directory  ctermfg=DarkBlue	                        guifg=Blue
 hi ErrorMsg   ctermfg=White	ctermbg=DarkRed             guifg=White guibg=Red	    
 hi FoldColumn ctermfg=DarkBlue ctermbg=Grey             guifg=DarkBlue guibg=Grey	    
