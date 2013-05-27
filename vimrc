@@ -81,6 +81,10 @@ if has("autocmd")
 
   " Set File type to 'text' for files ending in .txt
   autocmd BufNewFile,BufRead *.txt setfiletype text
+  
+  " Set file type for nginx configs
+  autocmd BufNewFile,BufRead /etc/nginx/* set ft=nginx
+  autocmd BufNewFile,BufRead /usr/local/etc/nginx/* set ft=nginx
 
   " Enable soft-wrapping for text files
   autocmd FileType text,markdown,html,xhtml,eruby setlocal wrap linebreak nolist
