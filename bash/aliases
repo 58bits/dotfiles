@@ -153,3 +153,6 @@ function railsapp {
 
 # misc
 alias reload='. ~/.bash_profile'
+
+# tsung
+alias treport="/usr/local/Cellar/tsung/1.4.2/lib/tsung/bin/tsung_stats.pl; open report.html"

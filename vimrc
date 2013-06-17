@@ -84,6 +84,7 @@ if has("autocmd")
   
   " Set file type for nginx configs
   autocmd BufNewFile,BufRead /etc/nginx/* set ft=nginx
+  autocmd BufNewFile,BufRead /private/etc/nginx/* set ft=nginx
   autocmd BufNewFile,BufRead /usr/local/etc/nginx/* set ft=nginx
 
   " Enable soft-wrapping for text files
