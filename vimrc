@@ -201,10 +201,11 @@ map <F2> :NERDTreeToggle<CR>
 "nmap <Space> <leader>be
 "
 "Map spacebar to CommandTBuffer
-nmap <Space> :CommandTBuffer<CR>
+"nmap <Space> :CommandTBuffer<CR>
+nmap <Space> :CtrlPBuffer<CR>
 
 "CommandT command
-noremap <Leader>z  :CommandT<CR>
+"noremap <Leader>z  :CommandT<CR>
 
 "TComment toggle mapping
 noremap <Leader>cc  :TComment<CR>
