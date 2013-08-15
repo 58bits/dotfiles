@@ -20,6 +20,17 @@ function scpp() {
     echo "Copied to clipboard: http://www.58bits.com/i/$1"
 }
 
+function s3up() {
+  if [ -f "$1" ]; then
+    s3cmd put "$1" s3://downloads.58bits.com
+    s3cmd setacl --acl-public s3://downloads.58bits.com/${1}
+    echo "http://downloads.58bits.com/$1" | pbcopy;
+    echo "Copied to clipboard: http://downloads.58bits.com/$1"
+  else
+    echo "s3up requires a valid filename as an argument." >&2
+  fi
+}
+
 # Start an HTTP server from a directory, optionally specifying the port
 function server() {
     local port="${1:-8000}"
