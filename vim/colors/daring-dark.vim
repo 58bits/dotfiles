@@ -11,6 +11,10 @@ endif
 
 let g:colors_name = "daring-dark"
 
+" Ctrl-P matches
+hi CtrlPMatch ctermfg=Yellow guifg=Yellow
+
+
 " Normal should come first
 " hi Normal     guifg=White  guibg=Black
 " hi Cursor     guifg=bg     guibg=fg
