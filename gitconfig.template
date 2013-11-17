@@ -1,0 +1,21 @@
+[user]
+    name = ${name}
+    email = ${email}
+[alias]
+    co = checkout
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+[core]
+    editor = vim
+    autocrlf = input
+    excludesfile = ${home}/.gitignore
+[apply]
+    whitespace = nowarn
+[format]
+    pretty = %C(yellow)%h%Creset %s %C(red)(%cr)%Creset
+[github]
+    user = ${github}
+[push]
+    default = simple
