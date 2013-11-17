@@ -66,7 +66,8 @@ email=$(get_required_input "Enter your email address: " "Please enter your email
 github=$(get_required_input "Enter your github user ID: " "Please enter your github user ID.")
 home=$HOME
 
-echo -n "Create a new ${HOME}/.gitconfig file with name: $name, email: $email and github user iD: $github? (y/n)"
+echo "Create a new ${HOME}/.gitconfig file with name: $name, email: $email and github user iD: $github?"
+echo -n "(y/n)"
 read ans
 
 case $ans in
@@ -75,8 +76,17 @@ Y|y) ;;
 N|n) exit ;;
 [Nn][Oo]) exit ;;
 *) echo "Invalid command"
+   exit ;;
 esac
-
 
 echo "Creating ~/.gitconfig"
 process_template "./gitconfig.template" "${HOME}/.gitconfig"
+
+echo "Symlinking files"
+
+# Find all of our target source files to symlink
+files=$(find . -maxdepth 1 -type f  \! -name '*\.*')
+
+for file in $files ; do
+  echo $file
+done
