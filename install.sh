@@ -1,5 +1,21 @@
 #!/bin/bash
 
+# Install script for dotfiles.
+
+# (c) Copyright (c) 2013, Anthony Bouch (tony@58bits.com). All rights reserved.
+#
+# THIS SOFTWARE IS PROVIDED BY AUTHOR AND CONTRIBUTORS ``AS IS'' AND
+# ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+# IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+# ARE DISCLAIMED.  IN NO EVENT SHALL AUTHOR OR CONTRIBUTORS BE LIABLE
+# FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+# DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+# OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+# HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+# LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+# OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+# SUCH DAMAGE.
+
 ###~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~##
 #
 # FUNCTION: get_required_input
@@ -89,7 +105,6 @@ git_config() {
 # Start...
 #
 ###~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~##
-
 if [ ! -d "${HOME}/.dotfiles" ]; then
     echo "Your 'dotfiles' source files and this script should be located in the directory ${HOME}/.dotfiles"
     echo "Please clone the git repo into this directory and try again."
@@ -106,5 +121,10 @@ echo "Symlinking files"
 files=$(find . -maxdepth 1 -type f  \! -name '*\.*')
 
 for file in $files ; do
-  echo $file
+  target="${HOME}/.$(basename $file)"
+  echo $target
+  if [ -f  $target ]; then
+    echo "$target exists. Overwrite?"
+  fi
+  #ln -s $file ${HOME}/.$(basename $file)
 done
