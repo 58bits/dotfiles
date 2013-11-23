@@ -99,6 +99,20 @@ git_config() {
     process_template "./gitconfig.template" "${HOME}/.gitconfig"
 }
 
+###~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~##
+#
+# FUNCTION: git_config
+#
+###~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~##
+symlink() {
+  if [ -z "$1" -o ! -f "$1" ]; then
+    echo "symlink requires a valid source file as an argument."
+    exit 1
+  fi
+
+  ln -fs $1 $2
+}
+
 
 ###~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~##
 # 
@@ -125,6 +139,15 @@ for file in $files ; do
   echo $target
   if [ -f  $target ]; then
     echo "$target exists. Overwrite?"
+    echo -n "(y/n):"
+    read ans
+    case $ans in
+    Y|y) symlink $file $target ;;
+    N|n) ;;
+    *) echo "Invalid command"
+       exit ;;
+    esac
+  else
+    symlink $file $target
   fi
-  #ln -s $file ${HOME}/.$(basename $file)
 done
