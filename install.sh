@@ -105,12 +105,27 @@ git_config() {
 #
 ###~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~##
 symlink() {
-  if [ -z "$1" -o ! -f "$1" ]; then
-    echo "symlink requires a valid source file as an argument."
+  if [ -z "$1" -o ! -e "$1" ]; then
+    echo "symlink requires a valid source file or directory as an argument."
     exit 1
   fi
 
-  ln -fs $1 $2
+  if [ -e  $2 ]; then
+    echo "$2 exists. Overwrite?"
+    echo -n "(y/n):"
+    read ans
+    case $ans in
+    Y|y) 
+        rm $2 #just in case it's a directory - otherwise the symlink will be nested inside.
+        ln -fs $1 $2 
+         ;;
+    N|n) ;;
+    *) echo "Invalid command"
+       exit ;;
+    esac
+  else
+    ln -fs $1 $2
+  fi  
 }
 
 
@@ -129,25 +144,15 @@ cd $HOME/.dotfiles #Just to be sure.
 
 echo "Symlinking files"
 
+symlink "${HOME}/.dotfiles/bash" "${HOME}/.bash"
+symlink "${HOME}/.dotfiles/zsh" "${HOME}/.zsh"
+
 # Find all of our target source files to symlink
 files=$(find $(pwd) -maxdepth 1 -type f  \! -name '*\.*')
 
 for file in $files ; do
   target="${HOME}/.$(basename $file)"
-  #echo $target
-  if [ -f  $target ]; then
-    echo "$target exists. Overwrite?"
-    echo -n "(y/n):"
-    read ans
-    case $ans in
-    Y|y) symlink $file $target ;;
-    N|n) ;;
-    *) echo "Invalid command"
-       exit ;;
-    esac
-  else
-    symlink $file $target
-  fi
+  symlink $file $target
 done
 
 git_config
