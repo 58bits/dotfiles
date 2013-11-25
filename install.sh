@@ -101,8 +101,9 @@ git_config() {
 
 ###~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~##
 #
-# FUNCTION: git_config
-#
+# FUNCTION: symlink
+# Params: $1 = source file
+# Params: $2 = target symlink
 ###~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~##
 symlink() {
   if [ -z "$1" -o ! -e "$1" ]; then
