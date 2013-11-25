@@ -127,16 +127,14 @@ fi
 
 cd $HOME/.dotfiles #Just to be sure.
 
-#git_config
-
 echo "Symlinking files"
 
 # Find all of our target source files to symlink
-files=$(find . -maxdepth 1 -type f  \! -name '*\.*')
+files=$(find $(pwd) -maxdepth 1 -type f  \! -name '*\.*')
 
 for file in $files ; do
   target="${HOME}/.$(basename $file)"
-  echo $target
+  #echo $target
   if [ -f  $target ]; then
     echo "$target exists. Overwrite?"
     echo -n "(y/n):"
@@ -151,3 +149,5 @@ for file in $files ; do
     symlink $file $target
   fi
 done
+
+git_config
