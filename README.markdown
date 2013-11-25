@@ -1,6 +1,6 @@
 # Anthony Bouch's Dot Files 
 
-Based on Ryan Bates' excellent Dot Files repository.
+Based on Ryan Bates' excellent [Dot Files](https://github.com/ryanb/dotfiles) repository.  
 The rake installer has been removed (and therefore the dependancy on Ruby) and replaced with a bash install script `install.sh`.
 
 ## Installation
@@ -10,9 +10,6 @@ The rake installer has been removed (and therefore the dependancy on Ruby) and r
 	git submodule update
 	cd ~/.dotfiles
 	./install.sh
-
-	(From Ryan's original repo)
-	git clone git://github.com/ryanb/dotfiles ~/.dotfiles
 
 	(Note - for future submodule updates call...)
 	git submodule foreach git pull origin master
