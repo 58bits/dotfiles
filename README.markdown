@@ -1,7 +1,7 @@
 # Anthony Bouch's Dot Files 
 
 Based on Ryan Bates' excellent [Dot Files](https://github.com/ryanb/dotfiles) repository.  
-The rake installer has been removed (and therefore the dependancy on Ruby) and replaced with a bash install script `install.sh`.
+The rake installer has been removed (and therefore the dependancy on Ruby) and replaced with a bash install script `install.sh`. Most of the important Vim modules are now git submodules, pointing to the author's repo, and pathogen is now used as the module/bundle manager.
 
 ## Installation
 
