@@ -29,7 +29,7 @@ See Ryan's original feature notes at [http://github.com/ryanb/dotfiles](http://g
 Nice PS1 prompt from Wayne E. Seguin [http://beginrescueend.com/ of RVM fame](http://beginrescueend.com/) which can be found in the contrib section of RVM.
 [https://github.com/wayneeseguin/rvm/blob/master/contrib/ps1_functions](https://github.com/wayneeseguin/rvm/blob/master/contrib/ps1_functions)
 A copy of the function is also in the bash/functions directory - so that 
-it can be sourced before RVM is installed. 
+it can be sourced without RVM is installed. 
 
 The Bitstream Vera Sans Mono fonts are also included in the repo:  
 [http://www-old.gnome.org/fonts/](http://www-old.gnome.org/fonts/)  
