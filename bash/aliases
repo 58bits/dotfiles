@@ -15,9 +15,6 @@ else
   alias l='ls -lAh'
 fi
 
-alias ak1='ssh akhua01'
-alias fr1='ssh freeland01'
-
 # Extract anything
 extract () {
     if [ -f $1 ] ; then
@@ -154,5 +151,3 @@ function railsapp {
 # misc
 alias reload='. ~/.bash_profile'
 
-# tsung
-alias treport="/usr/local/Cellar/tsung/1.4.2/lib/tsung/bin/tsung_stats.pl; open report.html"
