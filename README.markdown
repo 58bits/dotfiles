@@ -14,6 +14,25 @@ The rake installer has been removed (and therefore the dependency on Ruby) and r
 	(Note - for future submodule updates call...)
 	git submodule foreach git pull origin master
 
+Then edit your .bashrc file to include the following..
+
+
+    source ~/.bash/aliases
+    source ~/.bash/completions
+    source ~/.bash/paths
+    source ~/.bash/config
+    source ~/.bash/functions/utils
+
+    if [ -f ~/.localrc ]; then
+        . ~/.localrc
+    fi
+
+And if you want Wayne E. Seguin's excellent Bash shell prompt (see below links)...
+
+	[[ -s "$HOME/.dotfiles/bash/functions/ps1_functions" ]] && source "$HOME/.dotfiles/bash/functions/ps1_functions"
+	ps1_set --prompt ∴
+
+
 ## Environment
 
 Ryan was running on Mac OS X and using zsh, whereas this repo has been created on both 
