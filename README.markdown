@@ -6,9 +6,9 @@ The rake installer has been removed (and therefore the dependency on Ruby) and r
 ## Installation
 
 	git clone git://github.com/58bits/dotfiles ~/.dotfiles
+	cd ~/.dotfiles
 	git submodule init
 	git submodule update
-	cd ~/.dotfiles
 	./install.sh
 
 	(Note - for future submodule updates call...)
