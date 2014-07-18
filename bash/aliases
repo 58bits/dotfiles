@@ -85,7 +85,7 @@ alias gba="git branch -a"
 alias gbd="git branch -d"
 alias gco="git checkout"
 alias gcob="git checkout -b"
-alias gm="git merge"
+#alias gm="git merge"
 alias gr="git rebase"
 alias gl="git log"
 alias lg='git log --graph --full-history --all --color --pretty=format:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s"'
@@ -147,6 +147,14 @@ function railsapp {
  shift 1
  rails new $appname -m https://raw.github.com/RailsApps/rails3-application-templates/master/rails3-devise-rspec-cucumber-template.rb -T
 }
+
+#NPM
+# npm shortcuts that only list top-level modules
+# ! overrides the line-number utility
+alias ng="npm list -g --depth=0 2>/dev/null"
+alias nl="npm list --depth=0 2>/dev/null"
+alias nt="npm test"
+alias ns="npm start"
 
 # misc
 alias reload='. ~/.bash_profile'
