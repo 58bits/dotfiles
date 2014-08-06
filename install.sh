@@ -149,6 +149,8 @@ echo "Symlinking files"
 symlink "${HOME}/.dotfiles/bash" "${HOME}/.bash"
 symlink "${HOME}/.dotfiles/zsh" "${HOME}/.zsh"
 symlink "${HOME}/.dotfiles/vim" "${HOME}/.vim"
+symlink "${HOME}/.dotfiles/bash-git-prompt" "${HOME}/.bash-git-prompt"
+symlink "${HOME}/.dotfiles/git-prompt-colors.sh" "${HOME}/.git-prompt-colors.sh"
 
 # Find all of our target source files to symlink
 files=$(find $(pwd) -maxdepth 1 -type f  \! -name '*\.*')
