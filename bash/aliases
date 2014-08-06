@@ -43,6 +43,7 @@ alias upgrade='apt-get update && apt-get upgrade && apt-get clean'
 # Mvim
 alias v='mvim'
 
+alias lh='ls -ldh .??*'
 alias ll="ls -l"
 alias la='ls -A'
 alias cl="clear"
