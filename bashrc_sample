@@ -103,6 +103,12 @@ if [[ -n "$PS1" ]] ; then
     fi
 fi
 
-[[ -s "/usr/local/rvm/scripts/rvm" ]] && source "/usr/local/rvm/scripts/rvm"
 [[ -s "$HOME/.dotfiles/bash/functions/ps1_functions" ]] && source "$HOME/.dotfiles/bash/functions/ps1_functions"
 ps1_set --prompt ∴
+
+#Or if you want to use the new git bash prompt - comment out the ps1_functions 
+# script above and add the following.
+
+#GIT_PROMPT_ONLY_IN_REPO=1
+#source ~/.bash-git-prompt/gitprompt.sh
+
