@@ -1,4 +1,4 @@
-local Time12a="\$(date +%H:%M)"
+local Time12a="\$(date +%H:%M:%S)"
 local PathShort=":\w"
 local Username="\u"
 local Separator="@"
@@ -23,11 +23,11 @@ GIT_PROMPT_COMMAND_OK="${Green}✔ "    # indicator if the last command returned
 GIT_PROMPT_COMMAND_FAIL="${Red}✘ "   # indicator if the last command returned with an exit code of other than 0
 
 #GIT_PROMPT_START_USER="${Yellow}${PathShort}${ResetColor}"
-GIT_PROMPT_START_USER="${Green}${Username}${White}${Separator}${Cyan}${Hostname}${Yellow}${PathShort}${ResetColor}"
+GIT_PROMPT_START_USER="${White}${Time12a} ${Green}${Username}${White}${Separator}${Cyan}${Hostname}${Yellow}${PathShort}${ResetColor}"
 #GIT_PROMPT_START_ROOT="${Yellow}${PathShort}${ResetColor}"
-GIT_PROMPT_START_ROOT="${Red}${Username}${White}${Separator}${Cyan}${Hostname}${Yellow}${PathShort}${ResetColor}"
-GIT_PROMPT_END_USER=" \n${White}${Time12a}${ResetColor} ∴ "
-GIT_PROMPT_END_ROOT=" \n${White}${Time12a}${ResetColor} # "
+GIT_PROMPT_START_ROOT="${White}${Time12a} ${Red}${Username}${White}${Separator}${Cyan}${Hostname}${Yellow}${PathShort}${ResetColor}"
+GIT_PROMPT_END_USER=" \n${ResetColor}∴ "
+GIT_PROMPT_END_ROOT=" \n${ResetColor}# "
 
 # Please do not add colors to these symbols
 GIT_PROMPT_SYMBOLS_AHEAD="↑·"         # The symbol for "n versions ahead of origin"
