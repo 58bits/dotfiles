@@ -79,8 +79,8 @@ function s { cd ~/Scripts/$1; }
 alias g="git status"
 alias ga="git add"
 alias gaa="git add --all"
-alias gc="git commit -m"
-alias gca="git commit -am"
+alias gc="git commit"
+alias gca="git commit -a"
 alias gb="git branch"
 alias gba="git branch -a"
 alias gbd="git branch -d"
@@ -90,6 +90,7 @@ alias gcob="git checkout -b"
 alias gr="git rebase"
 alias gl="git log"
 alias lg='git log --graph --full-history --all --color --pretty=format:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s"'
+alias glf='git log --pretty=full'
 alias gs="git status"
 alias gsh="git show"
 alias gd="git diff"
