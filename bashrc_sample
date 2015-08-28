@@ -106,6 +106,9 @@ fi
 [[ -s "$HOME/.dotfiles/bash/functions/ps1_functions" ]] && source "$HOME/.dotfiles/bash/functions/ps1_functions"
 ps1_set --prompt ∴
 
+# If you're developing with node, add any project local binaries to the path
+export PATH="./node_modules/.bin:$PATH"  
+
 #Or if you want to use the new git bash prompt - comment out the ps1_functions 
 # script above and add the following.
 
