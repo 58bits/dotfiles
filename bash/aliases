@@ -158,6 +158,13 @@ alias nl="npm list --depth=0 2>/dev/null"
 alias nt="npm test"
 alias ns="npm start"
 
+# Start an npm http-server
+nserve () {
+  http-server "$@";
+}
+
+
+
 # misc
 alias reload='. ~/.bash_profile'
 
