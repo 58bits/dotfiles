@@ -1,0 +1,21 @@
+# Mac OS X - start and stop apache daemon
+sudo launchctl unload /System/Library/LaunchDaemons/org.apache.httpd.plist
+sudo launchctl load /System/Library/LaunchDaemons/org.apache.httpd.plist
+
+sudo /etc/init.d/apache2 restart
+a2ensite (enable a site)
+a2dissite (disable a site)
+a2enmod (enable a module)
+a2dismod (disable a module)
+
+#Mac OS X
+sudo apachectl restart
+apachectl start | stop | restart | graceful|graceful-stop
+
+# Test apache syntax before reloading
+apachectl configtest or the -t
+
+# Test an apache password
+htpasswd passwdfile username password
+htpasswd /etc/apache2/passwords admin
+sudo htpasswd -b /etc/nginx/htpasswd svmk typology
