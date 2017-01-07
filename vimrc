@@ -6,8 +6,8 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
-" Source pathogen. In this case it's in a bundle directory and not the 
-" Vim autoload directory (and is managed as a git subrepository) 
+" Source pathogen. In this case it's in a bundle directory and not the
+" Vim autoload directory (and is managed as a git subrepository)
 source ~/.vim/bundle/pathogen/autoload/pathogen.vim
 
 " Now call pathogen
@@ -28,7 +28,7 @@ set directory=$HOME/.vim/tmp//,.  " Keep swap files in one location
 set history=50			  " keep 50 lines of command line history
 set ruler			  " show the cursor position all the time
 set showcmd			  " display incomplete commands
-set showmode   			  
+set showmode
 set incsearch			  " do incremental searching
 set hidden                        " Handle multiple buffers better.
 set wildmenu                      " Enhanced command line completion.
@@ -81,7 +81,7 @@ if has("autocmd")
 
   " Set File type to 'text' for files ending in .txt
   autocmd BufNewFile,BufRead *.txt setfiletype text
-  
+
   " Set file type for nginx configs
   autocmd BufNewFile,BufRead /etc/nginx/* set ft=nginx
   autocmd BufNewFile,BufRead /private/etc/nginx/* set ft=nginx
@@ -92,7 +92,7 @@ if has("autocmd")
 
   " Set tab and shitwidth settings for ruby
   autocmd FileType ruby setlocal shiftwidth=2 tabstop=2 softtabstop=2
-  
+
   " Put these in an autocmd group, so that we can delete them easily.
   augroup vimrcEx
   au!
@@ -152,7 +152,7 @@ if &diff
 endif
 
 " Color scheme
-colorscheme daring-dark 
+colorscheme daring-dark
 highlight NonText guibg=#060606
 highlight Folded  guibg=#0A0A0A guifg=#9090D0
 
@@ -262,21 +262,21 @@ vnoremap X "_X
 map <Leader>R :e doc/README_FOR_APP<CR>
 
 " Leader shortcuts for Rails commands
-map <Leader>m :Rmodel 
-map <Leader>c :Rcontroller 
-map <Leader>v :Rview 
-map <Leader>u :Runittest 
-map <Leader>f :Rfunctionaltest 
-map <Leader>tm :RTmodel 
-map <Leader>tc :RTcontroller 
-map <Leader>tv :RTview 
-map <Leader>tu :RTunittest 
-map <Leader>tf :RTfunctionaltest 
-map <Leader>sm :RSmodel 
-map <Leader>sc :RScontroller 
-map <Leader>sv :RSview 
-map <Leader>su :RSunittest 
-map <Leader>sf :RSfunctionaltest 
+map <Leader>m :Rmodel
+map <Leader>c :Rcontroller
+map <Leader>v :Rview
+map <Leader>u :Runittest
+map <Leader>f :Rfunctionaltest
+map <Leader>tm :RTmodel
+map <Leader>tc :RTcontroller
+map <Leader>tv :RTview
+map <Leader>tu :RTunittest
+map <Leader>tf :RTfunctionaltest
+map <Leader>sm :RSmodel
+map <Leader>sc :RScontroller
+map <Leader>sv :RSview
+map <Leader>su :RSunittest
+map <Leader>sf :RSfunctionaltest
 
 " Hide search highlighting
 map <Leader>h :set invhls <CR>
@@ -340,6 +340,14 @@ set tags=./tags;
 
 let g:fuf_splitPathMatching=1
 
+fun! TrimWhitespace()
+    let l:save = winsaveview()
+    %s/\s\+$//e
+    call winrestview(l:save)
+endfun
+
+command! TrimWhitespace call TrimWhitespace()
+
 " Open URL
 " command -bar -nargs=1 OpenURL :!open <args>
 " function! OpenURL()
@@ -358,7 +366,7 @@ nmap <F9> :set invnumber<CR>
 "Set F9 to toggle paste mode in insert mode.
 set pastetoggle=<F9>
 
-"Markdown to HTML  
+"Markdown to HTML
 nmap <Leader>md :%!/usr/local/bin/Markdown.pl --html4tags<CR>
 
 " Uncomment to use Jamis Buck's file opening plugin
