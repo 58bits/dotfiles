@@ -51,4 +51,4 @@
 	url = https://github.com/powerline/fonts.git
 [submodule "dircolors-solarized"]
 	path = dircolors-solarized
-	url = git@github.com:seebi/dircolors-solarized.git
+	url = https://github.com/seebi/dircolors-solarized.git
