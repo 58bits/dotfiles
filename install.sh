@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Install script for dotfiles.
+# change me.
 
 # (c) Copyright (c) 2013, Anthony Bouch (tony@58bits.com). All rights reserved.
 #
