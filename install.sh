@@ -131,6 +131,35 @@ symlink() {
   fi  
 }
 
+###~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~##
+#
+# FUNCTION: copy
+# Params: $1 = source file
+# Params: $2 = destination file
+#
+###~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~##
+copy() {
+  if [ -z "$1" -o ! -e "$1" ]; then
+    echo "copy requires a valid source file."
+    exit 1
+  fi
+
+  if [ -e  $2 ]; then
+    echo "$2 exists. Overwrite?"
+    echo -n "(y/n):"
+    read ans
+    case $ans in
+    Y|y) 
+        cp $1 $2
+         ;;
+    N|n) ;;
+    *) echo "Invalid command"
+       exit ;;
+    esac
+  else
+    cp $1 $2
+  fi  
+}
 
 ###~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~##
 # 
@@ -156,6 +185,8 @@ symlink "${HOME}/.dotfiles/git-prompt.sh" "${HOME}/.git-prompt.sh"
 symlink "${HOME}/.dotfiles/bash-git-prompt" "${HOME}/.bash-git-prompt"
 symlink "${HOME}/.dotfiles/git-prompt-colors.sh" "${HOME}/.git-prompt-colors.sh"
 symlink "${HOME}/.dotfiles/git-completion.bash" "${HOME}/.git-completion.bash"
+symlink "${HOME}/.dotfiles/.tmux/.tmux.conf" "${HOME}/.tmux.conf"
+copy "${HOME}/.dotfiles/.tmux/.tmux.conf.local" "${HOME}/.tmux.conf.local"
 
 # Find all remaining target source files to symlink
 files=$(find $(pwd) -maxdepth 1 -type f  \! -name '*\.*')
