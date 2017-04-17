@@ -38,6 +38,9 @@ Ctrl-b : source-file /path/to/file
 # Create window:
 Ctrl-b c
 
+# Rename window:
+Ctrlb ,
+
 # Destroy window:
 Ctrl-b x
 
