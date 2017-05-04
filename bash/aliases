@@ -169,7 +169,8 @@ nserve () {
   http-server "$@";
 }
 
-
+#Debian package manager
+alias pkgs="dpkg-query -f '${binary:Package}\n' -W"
 
 # misc
 alias reload='. ~/.bash_profile'
