@@ -64,13 +64,6 @@ b() {
     cd $str
 }
 
-# changing directory to project
-function p { cd ~/Projects/$1; }
-# changing directory to code project
-function c { cd ~/Code/$1; }
-# changing directory to scripts
-function s { cd ~/Scripts/$1; }
-
 if [ -n "$(type -t __git_complete)" ] && [ "$(type -t __git_complete)" = function ]; then 
   __git_complete gs _git_status
   __git_complete gc _git_commit
