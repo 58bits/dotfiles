@@ -6,6 +6,11 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
+"Will not work under Teminal.app on Mac OS X - causes certain colors and characters to 'flash'.
+set t_Co=256
+
+set term=screen-256color
+
 " Source pathogen. In this case it's in a bundle directory and not the
 " Vim autoload directory (and is managed as a git subrepository)
 source ~/.vim/bundle/pathogen/autoload/pathogen.vim
@@ -134,8 +139,6 @@ set laststatus=2
 """"""""""""""""""""""""""""""""""""""""""""""""
 " Syntax highlighting
 """"""""""""""""""""""""""""""""""""""""""""""""
-"Will not work under Teminal.app on Mac OS X - causes certain colors and characters to 'flash'.
-set t_Co=256
 
 " syntax enable                     " Turn on syntax highlighting (compare with syntax on below)
 " Switch syntax highlighting on, when the terminal has colors
