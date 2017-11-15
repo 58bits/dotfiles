@@ -98,57 +98,6 @@ alias gps="git push"
 alias gpl="git pull"
 alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
 
-# Ruby
-alias r="ruby"
-alias i="irb"
-alias rk="rake"
-alias rkt="rake -T | vim -"
-alias b="bundle"
-alias be="bundle exec"
-alias bi="bundle install"
-
-# Rails
-# console
-function sc() {
-  if [ -x script/rails ]; then
-    script/rails console $1
-  else
-    script/console $1
-  fi
-}
-# server
-function ss() {
-  if [ -x script/rails ]; then
-    thin start $@
-  else
-    script/server $@
-  fi
-}
-# generator
-function sg() {
-  if [ -x script/rails ]; then
-    script/rails generate $@
-  else
-    script/generate $@
-  fi
-}
-
-# other
-alias rkdm="rake db:migrate"
-alias rkdmr="rake db:migrate:redo"
-alias rkdr="rake db:rollback"
-alias rkdc="rake db:create"
-alias rklc="rake log:clear"
-alias rkr="rake routes | vim"
-
-
-# alternative to "rails" command to use templates
-function railsapp {
- appname=$1
- shift 1
- rails new $appname -m https://raw.github.com/RailsApps/rails3-application-templates/master/rails3-devise-rspec-cucumber-template.rb -T
-}
-
 #NPM
 # npm shortcuts that only list top-level modules
 # ! overrides the line-number utility

@@ -13,9 +13,9 @@
 # then uncomment the following line to make Meta + arrow keys mapping work
 #set -ga terminal-overrides "*:kUP3=\e[1;9A,*:kDN3=\e[1;9B,*:kRIT3=\e[1;9C,*:kLFT3=\e[1;9D"
 
-set -g default-terminal "screen-256color" # colors!
-set-option -ga terminal-overrides ",screen-256color:Tc"
-set -g terminal-overrides ",xterm-256color:Tc"
+#set -g default-terminal "screen-256color" # colors!
+#set-option -ga terminal-overrides ",screen-256color:Tc"
+#set -g terminal-overrides ",xterm-256color:Tc"
 
 # -- windows & pane creation ---------------------------------------------------
 
@@ -45,7 +45,7 @@ tmux_conf_new_session_prompt=false
 # RGB 24-bit colour support (tmux >= 2.2), possible values are:
 #  - true
 #  - false (default)
-tmux_conf_theme_24b_colour=true
+tmux_conf_theme_24b_colour=false
 
 # window style
 tmux_conf_theme_window_fg='default'
