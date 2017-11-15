@@ -9,8 +9,6 @@ set nocompatible
 "Will not work under Teminal.app on Mac OS X - causes certain colors and characters to 'flash'.
 set t_Co=256
 
-set term=screen-256color
-
 " Source pathogen. In this case it's in a bundle directory and not the
 " Vim autoload directory (and is managed as a git subrepository)
 source ~/.vim/bundle/pathogen/autoload/pathogen.vim
