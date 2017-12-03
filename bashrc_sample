@@ -161,3 +161,24 @@ source ~/.bash-git-prompt/gitprompt.sh
     tmux new-window -c "$PWD" 2>/dev/null && exec tmux a
     exec tmux
 }
+
+# wsl bash is not a login shell
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
+fi
+
+# ssh-agent configuration
+if [ -z "$(pgrep ssh-agent)" ]; then
+    rm -rf /tmp/ssh-*
+    eval $(ssh-agent -s) > /dev/null
+else
+    export SSH_AGENT_PID=$(pgrep ssh-agent)
+    export SSH_AUTH_SOCK=$(find /tmp/ssh-* -name agent.*)
+fi
+
+# This is only required if you want to load the default, or single
+# ssh key on bash session start. In my case there are different 
+# keys per application so no point in loading any here yet.
+#if [ "$(ssh-add -l)" == "The agent has no identities." ]; then
+#    ssh-add
+#fi
