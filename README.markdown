@@ -45,6 +45,8 @@ Mac OS X and Ubuntu under bash.
 See the basrc_sample script - which can be copied to your own .bashrc file.
 [https://github.com/58bits/dotfiles/blob/master/bashrc_sample](https://github.com/58bits/dotfiles/blob/master/bashrc_sample)
 
+There is also some initial Windows Subsystem for Linux support in the bashrc_sample file.
+
 ## Features
 
 See Ryan's original feature notes at [http://github.com/ryanb/dotfiles](http://github.com/ryanb/dotfiles)
