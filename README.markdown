@@ -1,18 +1,18 @@
-# Anthony Bouch's Dot Files 
+# Anthony Bouch's Dot Files
 
-Based on Ryan Bates' excellent [Dot Files](https://github.com/ryanb/dotfiles) repository.  
+Based on Ryan Bates' excellent [Dot Files](https://github.com/ryanb/dotfiles) repository.
 The rake installer has been removed (and therefore the dependency on Ruby) and replaced with a bash install script `install.sh`. Most of the important Vim modules are now git submodules, pointing to the author's repo, and pathogen is now used as the module/bundle manager. Lots of good bash and zsh aliases and helper functions (thanks to Ryan and others).
 
 ## Installation
 
-	git clone git://github.com/58bits/dotfiles ~/.dotfiles
-	cd ~/.dotfiles
-	git submodule init
-	git submodule update
-	./install.sh
+    git clone git://github.com/58bits/dotfiles ~/.dotfiles
+    cd ~/.dotfiles
+    git submodule init
+    git submodule update
+    ./install.sh
 
-	(Note - for future submodule updates call...)
-	git submodule foreach git pull origin master
+    (Note - for future submodule updates call...)
+    git submodule foreach git pull origin master
 
 Then edit your .bashrc file to include the following..
 
@@ -29,16 +29,20 @@ Then edit your .bashrc file to include the following..
 
 And if you want Wayne E. Seguin's excellent Bash shell prompt (see below links)...
 
-	[[ -s "$HOME/.dotfiles/bash/functions/ps1_functions" ]] && source "$HOME/.dotfiles/bash/functions/ps1_functions"
-	ps1_set --prompt ∴
+    [[ -s "$HOME/.dotfiles/bash/functions/ps1_functions" ]] && source "$HOME/.dotfiles/bash/functions/ps1_functions"
+    ps1_set --prompt ∴
 
+
+Now includes a sub-repo to Gregory Pakosz's amazing Tmux config...
+[https://github.com/gpakosz/.tmux](https://github.com/gpakosz/.tmux)
+There is a sampe tmux.conf.local in the .dotfiles directory root, which will be symlinked as ~/.tmux.config.local after running install.sh. Powerline modified fonts are also included as a sub-repo, which you'll need for Powerline symbol support in both Tmux and vim-airline.
 
 ## Environment
 
-Ryan was running on Mac OS X and using zsh, whereas this repo has been created on both 
+Ryan was running on Mac OS X and using zsh, whereas this repo has been created on both
 Mac OS X and Ubuntu under bash.
 
-See the basrc_sample script - which can be copied to your own .bashrc file.  
+See the basrc_sample script - which can be copied to your own .bashrc file.
 [https://github.com/58bits/dotfiles/blob/master/bashrc_sample](https://github.com/58bits/dotfiles/blob/master/bashrc_sample)
 
 ## Features
@@ -47,19 +51,19 @@ See Ryan's original feature notes at [http://github.com/ryanb/dotfiles](http://g
 
 Nice PS1 prompt from Wayne E. Seguin [http://beginrescueend.com/ of RVM fame](http://beginrescueend.com/) which can be found in the contrib section of RVM.
 [https://github.com/wayneeseguin/rvm/blob/master/contrib/ps1_functions](https://github.com/wayneeseguin/rvm/blob/master/contrib/ps1_functions)
-A copy of the function is also in the bash/functions directory - so that 
-it can be sourced without RVM is installed. 
+A copy of the function is also in the bash/functions directory - so that
+it can be sourced without RVM is installed.
 
-The Bitstream Vera Sans Mono fonts are also included in the repo:  
-[http://www-old.gnome.org/fonts/](http://www-old.gnome.org/fonts/)  
-[http://ftp.gnome.org/pub/GNOME/sources/ttf-bitstream-vera/1.10/](http://ftp.gnome.org/pub/GNOME/sources/ttf-bitstream-vera/1.10/)  
-[http://www.58bits.com/blog/2011/03/15/beautiful-developers-font](http://www.58bits.com/blog/2011/03/15/beautiful-developers-font)  
+The Bitstream Vera Sans Mono fonts are also included in the repo:
+[http://www-old.gnome.org/fonts/](http://www-old.gnome.org/fonts/)
+[http://ftp.gnome.org/pub/GNOME/sources/ttf-bitstream-vera/1.10/](http://ftp.gnome.org/pub/GNOME/sources/ttf-bitstream-vera/1.10/)
+[http://www.58bits.com/blog/2011/03/15/beautiful-developers-font](http://www.58bits.com/blog/2011/03/15/beautiful-developers-font)
 
 
 You'll need to update your `.gvimrc` accordingly if you choose not to use Vera Sans Mono.
 
 My ultimate Vim color theme, daring-dark.vim is now vim and gvim matched.
-[https://github.com/58bits/dotfiles/blob/master/vim/colors/daring-dark.vim](https://github.com/58bits/dotfiles/blob/master/vim/colors/daring-dark.vim)  
+[https://github.com/58bits/dotfiles/blob/master/vim/colors/daring-dark.vim](https://github.com/58bits/dotfiles/blob/master/vim/colors/daring-dark.vim)
 Note: Use iTerm, or MacVim under Mac OS X. The default Terminal.app is crippled.
 
 Also contains my cleaned-up Vim config and plugins.
