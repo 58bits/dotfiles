@@ -52,6 +52,3 @@
 [submodule "dircolors-solarized"]
 	path = dircolors-solarized
 	url = https://github.com/seebi/dircolors-solarized.git
-[submodule ".tmux"]
-	path = .tmux
-	url = https://github.com/gpakosz/.tmux
