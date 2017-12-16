@@ -185,7 +185,8 @@ symlink "${HOME}/.dotfiles/git-prompt.sh" "${HOME}/.git-prompt.sh"
 symlink "${HOME}/.dotfiles/bash-git-prompt" "${HOME}/.bash-git-prompt"
 symlink "${HOME}/.dotfiles/git-prompt-colors.sh" "${HOME}/.git-prompt-colors.sh"
 symlink "${HOME}/.dotfiles/git-completion.bash" "${HOME}/.git-completion.bash"
-symlink "${HOME}/.dotfiles/.tmux/.tmux.conf" "${HOME}/.tmux.conf"
+symlink "${HOME}/.dotfiles/tmux" "${HOME}/.tmux"
+symlink "${HOME}/.dotfiles/tmux.conf" "${HOME}/.tmux.conf"
 # Not needed now, as a copy of this file is in the .dotfiles directory
 # and will be symlinked automatically.
 #copy "${HOME}/.dotfiles/.tmux/.tmux.conf.local" "${HOME}/.tmux.conf.local"
