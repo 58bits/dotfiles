@@ -91,8 +91,8 @@ _apply_theme() {
     tmux_conf_theme_window_status_current_format="#[fg=$tmux_conf_theme_window_status_bg,bg=$tmux_conf_theme_window_status_current_bg]$tmux_conf_theme_left_separator_main#[fg=default,bg=default,default] $tmux_conf_theme_window_status_current_format #[fg=$tmux_conf_theme_window_status_current_bg,bg=$tmux_conf_theme_status_bg,none]$tmux_conf_theme_left_separator_main"
   fi
 
-  tmux_conf_theme_window_status_format=$(echo "$tmux_conf_theme_window_status_format" | sed 's%#{circled_window_index}%#(sh -s _circled_digit #I)%g')
-  tmux_conf_theme_window_status_current_format=$(echo "$tmux_conf_theme_window_status_current_format" | sed 's%#{circled_window_index}%#(sh -s _circled_digit #I)%g')
+  tmux_conf_theme_window_status_format=$(echo "$tmux_conf_theme_window_status_format" | sed 's%#{circled_window_index}%#(~/.tmux/circled_digit.sh #I)%g')
+  tmux_conf_theme_window_status_current_format=$(echo "$tmux_conf_theme_window_status_current_format" | sed 's%#{circled_window_index}%#(~/.tmux/circled_digit.sh #I)%g')
 
   tmux  setw -g window-status-style "fg=$tmux_conf_theme_window_status_fg,bg=$tmux_conf_theme_window_status_bg,$tmux_conf_theme_window_status_attr" \;\
         setw -g window-status-format "$tmux_conf_theme_window_status_format" \;\
@@ -145,7 +145,7 @@ _apply_theme() {
     -e "s/#{prefix}/#[fg=$tmux_conf_theme_prefix_fg]#[bg=$tmux_conf_theme_prefix_bg]#[$tmux_conf_theme_prefix_attr]#{?client_prefix,$tmux_conf_theme_prefix,}/g")
 
   tmux_conf_theme_status_left=$(echo "$tmux_conf_theme_status_left" | sed \
-    -e "s%#{root}%#[fg=$tmux_conf_theme_root_fg]#[bg=$tmux_conf_theme_root_bg]#[$tmux_conf_theme_root_attr]#(sh -s _root #{pane_tty} #D)#[inherit]%g")
+    -e "s%#{root}%#[fg=$tmux_conf_theme_root_fg]#[bg=$tmux_conf_theme_root_bg]#[$tmux_conf_theme_root_attr]#(~/.tmux/root.sh #{pane_tty} #D)#[inherit]%g")
 
   if [ -n "$tmux_conf_theme_status_left" ]; then
     status_left=$(awk \
@@ -220,7 +220,7 @@ EOF
   tmux_conf_theme_status_right=${tmux_conf_theme_status_right-'#{pairing}#{prefix} #{battery_status} #{battery_bar} #{battery_percentage} , %R , %d %b | #{username} | #{hostname} '}
   tmux_conf_theme_status_right_fg=${tmux_conf_theme_status_right_fg:-'#8a8a8a,#e4e4e4,#000000'} # light gray, white, black
   tmux_conf_theme_status_right_bg=${tmux_conf_theme_status_right_bg:-'#080808,#d70000,#e4e4e4'} # dark gray, red, white
-  tmux_conf_theme_status_right_attr=${tmux_conf_theme_status_right_attr:-'none,none,bold'}
+  tmux_conf_theme_status_right_attr=${tmux_conf_theme_status_right_attr:-'none,none,none'}
 
   tmux_conf_theme_status_right=$(echo "$tmux_conf_theme_status_right" | sed \
     -e "s/#{pairing}/#[fg=$tmux_conf_theme_pairing_fg]#[bg=$tmux_conf_theme_pairing_bg]#[$tmux_conf_theme_pairing_attr]#{?session_many_attached,$tmux_conf_theme_pairing,}/g")
@@ -229,7 +229,7 @@ EOF
     -e "s/#{prefix}/#[fg=$tmux_conf_theme_prefix_fg]#[bg=$tmux_conf_theme_prefix_bg]#[$tmux_conf_theme_prefix_attr]#{?client_prefix,$tmux_conf_theme_prefix,}/g")
 
   tmux_conf_theme_status_right=$(echo "$tmux_conf_theme_status_right" | sed \
-    -e "s%#{root}%#[fg=$tmux_conf_theme_root_fg]#[bg=$tmux_conf_theme_root_bg]#[$tmux_conf_theme_root_attr]#(sh -s _root #{pane_tty} #D)#[inherit]%g")
+    -e "s%#{root}%#[fg=$tmux_conf_theme_root_fg]#[bg=$tmux_conf_theme_root_bg]#[$tmux_conf_theme_root_attr]#(~/.tmux/root.sh #{pane_tty} #D)#[inherit]%g")
 
   if [ -n "$tmux_conf_theme_status_right" ]; then
     status_right=$(awk \
