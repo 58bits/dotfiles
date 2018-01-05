@@ -1,5 +1,7 @@
 # Anthony Bouch's Dot Files
 
+![DotFiles](https://github.com/58bits/dotfiles/raw/master/screenshot.png "Anthony's Dot Files")
+
 ## Installation
 
     git clone git://github.com/58bits/dotfiles ~/.dotfiles
