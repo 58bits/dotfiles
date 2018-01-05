@@ -79,7 +79,7 @@ fi
 
 # Git branch status
 gbs () {
-  ~/git-branch-status/git-branch-status $1
+  ~/.dotfiles/git-branch-status.sh $1
 }
 
 alias ga="git add"
