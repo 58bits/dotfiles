@@ -108,13 +108,11 @@ if [ -f ~/.bash_aliases ]; then
   . ~/.bash_aliases
 fi
 
+
+# Source remaining settings from this repo
 source ~/.bash/aliases
 source ~/.bash/completions
 source ~/.bash/config
-
-if [ -f ~/.localrc ]; then
-  . ~/.localrc
-fi
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -127,55 +125,29 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# custom prompt
-[[ -s "$HOME/.dotfiles/bash/functions/ps1_functions" ]] && source "$HOME/.dotfiles/bash/functions/ps1_functions"
-ps1_set --prompt ∴
 
 export PATH="/usr/local/bin:$PATH"
-
 # if you're developing with node, add any project local binaries to the path
 export PATH="./node_modules/.bin:$PATH"
 export PATH="~/.local/bin:$PATH"
 
-# initial attempt to fix default file modes in Windows Subsystem for Linux.
+# initial attempt to fix default file modes in Windows Subsystem for Linux (WSL).
 if [ "$(umask)" = "0000" ]; then
   umask 022
 fi
 
-# custom git prompt
-# GIT_PROMPT_ONLY_IN_REPO=1
-GIT_PROMPT_THEME=Custom # use custom .git-prompt-colors.sh
-# GIT_PROMPT_THEME=Solarized # use theme optimized for solarized color scheme
-source ~/.bash-git-prompt/gitprompt.sh
-
-
-# Windows Subsystem for Linux additions
-#
-# https://github.com/goreliu/wsl-terminal
-[[ -z "$TMUX" && -n "$USE_TMUX" ]] && {
-    [[ -n "$ATTACH_ONLY" ]] && {
-        tmux a 2>/dev/null || {
-            cd && exec tmux
-        }
-        exit
-    }
-
-    tmux new-window -c "$PWD" 2>/dev/null && exec tmux a
-    exec tmux
-}
-
-# wsl bash is not a login shell
+# WSL bash is not a login shell
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
-# ssh-agent configuration
+# ssh-agent configuration for WSL
 if [ -z "$(pgrep ssh-agent)" ]; then
-    rm -rf /tmp/ssh-*
-    eval $(ssh-agent -s) > /dev/null
+   rm -rf /tmp/ssh-*
+   eval $(ssh-agent -s) > /dev/null
 else
-    export SSH_AGENT_PID=$(pgrep ssh-agent)
-    export SSH_AUTH_SOCK=$(find /tmp/ssh-* -name agent.*)
+   export SSH_AGENT_PID=$(pgrep ssh-agent)
+   export SSH_AUTH_SOCK=$(find /tmp/ssh-* -name agent.*)
 fi
 
 # This is only required if you want to load the default, or single
@@ -184,3 +156,17 @@ fi
 #if [ "$(ssh-add -l)" == "The agent has no identities." ]; then
 #    ssh-add
 #fi
+
+# Informative git prompt for bash and fish
+# https://github.com/magicmonty/bash-git-prompt
+# GIT_PROMPT_ONLY_IN_REPO=1
+GIT_PROMPT_THEME=Custom # use custom .git-prompt-colors.sh
+source ~/.bash-git-prompt/gitprompt.sh
+
+# Own rolled super fast prompt if not using .bash-git-prompt.sh above.
+# http://ezprompt.net/
+# export PS1="\[\e[32m\]\u\[\e[m\]@\[\e[36m\]\H\[\e[m\]\[\e[33m\]:\[\e[m\]\[\e[33m\]\w\[\e[m\] \n∴ "
+
+if [ -f ~/.localrc ]; then
+  . ~/.localrc
+fi
