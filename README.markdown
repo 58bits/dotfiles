@@ -18,7 +18,7 @@ Then edit your .bashrc file to include the following..
     source ~/.bash/completions
     source ~/.bash/config
 
-### PS1 Prompt
+#### PS1 Prompt
 
 There are example (commented) PS1 prompt versions in bashrc_sample using:
 
@@ -28,7 +28,7 @@ There are example (commented) PS1 prompt versions in bashrc_sample using:
 2. Or Martin Gondermann's bash-git-prompt.
 3. Or a very fast 'own rolled' PS1 prompt with git support via __git_ps1, which is ideal for WSL or slower machines. 
 
-### TMUX
+#### tmux
 
 Note - I've temporarily removed the sub-repo to Gregory Pakosz's amazing Tmux config
 https://github.com/gpakosz/.tmux
