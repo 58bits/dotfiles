@@ -1,5 +1,6 @@
 #!/bin/bash
 
+#  https://github.com/bill-auger/git-branch-status/
 #  git-branch-status - print pretty git branch sync status reports
 #
 #  Copyright 2011      Jehiah Czebotar     <https://github.com/jehiah>
