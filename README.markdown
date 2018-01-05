@@ -24,16 +24,14 @@ Then edit your .bashrc file to include the following..
 
 There are example (commented) PS1 prompt versions in bashrc_sample using:
 
-1. Wayne E. Seguin's excellent Bash shell prompt (see below links)...
-    [[ -s "$HOME/.dotfiles/bash/functions/ps1_functions" ]] && source "$HOME/.dotfiles/bash/functions/ps1_functions"
-    ps1_set --prompt ∴
-2. Or Martin Gondermann's bash-git-prompt.
-3. Or a very fast 'own rolled' PS1 prompt with git support via __git_ps1, which is ideal for WSL or slower machines. 
+1. Wayne E. Seguin's excellent Bash shell prompt (see below links)
+2. Or Martin Gondermann's bash-git-prompt
+3. Or a very fast 'own rolled' PS1 prompt with git support via \_\_git_ps1, which is ideal for WSL or slower machines 
 
 #### tmux
 
 Note - I've temporarily removed the sub-repo to Gregory Pakosz's amazing Tmux config  
-https://github.com/gpakosz/.tmux
+https://github.com/gpakosz/.tmux  
 The very slow shell spawn times in WSL meant that Gregory's config was very slow to load.
 I've trimmed down the settings and extracted Gregory's helper functions into the tmux directory. There is a sample tmux.conf and tmux.conf.local in the .dotfiles directory root which will be symlinked as ~/.tmux.conf and ~/.tmux.config.local after running install.sh. Powerline modified fonts are also included as a sub-repo, which you'll need for Powerline symbol support in both Tmux and vim-airline.
 
