@@ -57,7 +57,7 @@ process_template() {
     fi
 
     cp /dev/null $2
-    
+
     while read line ; do
         while [[ "$line" =~ (\$\{[a-zA-Z_][a-zA-Z_0-9]*\}) ]] ; do
             LHS=${BASH_REMATCH[1]}
@@ -117,9 +117,9 @@ symlink() {
     echo -n "(y/n):"
     read ans
     case $ans in
-    Y|y) 
+    Y|y)
         rm $2 #just in case it's a directory - otherwise the symlink will be nested inside.
-        ln -fs $1 $2 
+        ln -fs $1 $2
          ;;
     N|n) ;;
     *) echo "Invalid command"
@@ -127,7 +127,7 @@ symlink() {
     esac
   else
     ln -fs $1 $2
-  fi  
+  fi
 }
 
 ###~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~##
@@ -148,7 +148,7 @@ copy() {
     echo -n "(y/n):"
     read ans
     case $ans in
-    Y|y) 
+    Y|y)
         cp $1 $2
          ;;
     N|n) ;;
@@ -157,11 +157,11 @@ copy() {
     esac
   else
     cp $1 $2
-  fi  
+  fi
 }
 
 ###~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~##
-# 
+#
 # Start...
 #
 ###~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~##
