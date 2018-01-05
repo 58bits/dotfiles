@@ -157,6 +157,12 @@ fi
 #    ssh-add
 #fi
 
+# PS1 options
+
+# Wayne E. Seguin's excellent Bash shell prompt (see below links)...
+# [[ -s "$HOME/.dotfiles/bash/functions/ps1_functions" ]] && source "$HOME/.dotfiles/bash/functions/ps1_functions"
+# ps1_set --prompt ∴
+
 # Informative git prompt for bash and fish
 # https://github.com/magicmonty/bash-git-prompt
 # GIT_PROMPT_ONLY_IN_REPO=1
@@ -177,6 +183,7 @@ update_PS1 () {
 }
 shopt -u promptvars
 PROMPT_COMMAND=update_PS1
+
 
 # load any local settings
 if [ -f ~/.localrc ]; then
