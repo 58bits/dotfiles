@@ -184,8 +184,10 @@ symlink "${HOME}/.dotfiles/bash-git-prompt" "${HOME}/.bash-git-prompt"
 symlink "${HOME}/.dotfiles/git-prompt-colors.sh" "${HOME}/.git-prompt-colors.sh"
 symlink "${HOME}/.dotfiles/tmux" "${HOME}/.tmux"
 symlink "${HOME}/.dotfiles/tmux.conf" "${HOME}/.tmux.conf"
+symlink "${HOME}/.dotfiles/tmux.conf.local" "${HOME}/.tmux.conf.local"
 
-# Find all remaining target source files to symlink
+# Find all remaining target source files to symlink.
+# Ignore all files with a 'dot' in them.
 files=$(find $(pwd) -maxdepth 1 -type f  \! -name '*\.*')
 
 for file in $files ; do
