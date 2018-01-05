@@ -66,6 +66,9 @@ https://github.com/powerline/fonts
 My ultimate Vim color theme, daring-dark.vim is now vim and gvim matched.  
 https://github.com/58bits/dotfiles/blob/master/vim/colors/daring-dark.vim
 
+Some initial 'cheat' files are included in the cheat directory. You'll need the very cool cheat app from Chris Allen Lane  
+https://github.com/chrisallenlane/cheat
+
 Also contains my cleaned-up Vim config and core plugins, all loaded via pathogen.
 
 Enjoy.

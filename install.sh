@@ -3,7 +3,7 @@
 # Install script for dotfiles.
 # change me.
 
-# (c) Copyright (c) 2013, Anthony Bouch (tony@58bits.com). All rights reserved.
+# (c) Copyright (c) 2018, Anthony Bouch (tony@58bits.com). All rights reserved.
 #
 # THIS SOFTWARE IS PROVIDED BY AUTHOR AND CONTRIBUTORS ``AS IS'' AND
 # ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
@@ -177,19 +177,13 @@ cd $HOME/.dotfiles #Just to be sure.
 echo "Symlinking files"
 
 symlink "${HOME}/.dotfiles/bash" "${HOME}/.bash"
-symlink "${HOME}/.dotfiles/zsh" "${HOME}/.zsh"
 symlink "${HOME}/.dotfiles/vim" "${HOME}/.vim"
 symlink "${HOME}/.dotfiles/cheat" "${HOME}/.cheat"
 symlink "${HOME}/.dotfiles/dircolors-custom/dircolors.256dark" "${HOME}/.dircolors"
-symlink "${HOME}/.dotfiles/git-prompt.sh" "${HOME}/.git-prompt.sh"
 symlink "${HOME}/.dotfiles/bash-git-prompt" "${HOME}/.bash-git-prompt"
 symlink "${HOME}/.dotfiles/git-prompt-colors.sh" "${HOME}/.git-prompt-colors.sh"
-symlink "${HOME}/.dotfiles/git-completion.bash" "${HOME}/.git-completion.bash"
 symlink "${HOME}/.dotfiles/tmux" "${HOME}/.tmux"
 symlink "${HOME}/.dotfiles/tmux.conf" "${HOME}/.tmux.conf"
-# Not needed now, as a copy of this file is in the .dotfiles directory
-# and will be symlinked automatically.
-#copy "${HOME}/.dotfiles/.tmux/.tmux.conf.local" "${HOME}/.tmux.conf.local"
 
 # Find all remaining target source files to symlink
 files=$(find $(pwd) -maxdepth 1 -type f  \! -name '*\.*')

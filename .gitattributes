@@ -1,7 +1,0 @@
-# These files are binary and should be left untouched
-# (binary is a macro for -text -diff)
-*.ttf   binary
-*.otf   binary
-*.eot   binary
-*.woff  binary
-*.woff2 binary
