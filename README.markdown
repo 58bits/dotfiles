@@ -56,6 +56,10 @@ it can be sourced without RVM is installed.
 Alternative PS1 prompt from Martin Gondermann's bash-git-prompt.  
 https://github.com/magicmonty/bash-git-prompt
 
+Includes git-branch-stats with a `gbs` wrapper function in bash/aliases
+Useful with the 'fast' \_\_git_ps1 based PS1 prompt shown in bashrc_sample.
+https://github.com/bill-auger/git-branch-status/
+
 The Bitstream Vera Sans Mono fonts are also included in the repo:  
 http://www-old.gnome.org/fonts/  
 http://ftp.gnome.org/pub/GNOME/sources/ttf-bitstream-vera/1.10/  
