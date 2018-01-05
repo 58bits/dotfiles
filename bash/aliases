@@ -76,6 +76,12 @@ if [ -n "$(type -t __git_complete)" ] && [ "$(type -t __git_complete)" = functio
 fi
 
 # Git
+
+# Git branch status
+gbs () {
+  ~/git-branch-status/git-branch-status $1
+}
+
 alias ga="git add"
 alias gaa="git add --all"
 alias gc="git commit"
