@@ -7,30 +7,15 @@
 [submodule "vim/bundle/fugitive"]
 	path = vim/bundle/fugitive
 	url = https://github.com/tpope/vim-fugitive.git
-[submodule "vim/bundle/textile"]
-	path = vim/bundle/textile
-	url = git://github.com/timcharper/textile.vim.git
 [submodule "vim/bundle/nerd-tree"]
 	path = vim/bundle/nerd-tree
 	url = git://github.com/scrooloose/nerdtree.git
 [submodule "vim/bundle/unimpaired"]
 	path = vim/bundle/unimpaired
 	url = git://github.com/tpope/vim-unimpaired.git
-[submodule "vim/bundle/vim-markdown-preview"]
-	path = vim/bundle/vim-markdown-preview
-	url = git://github.com/nelstrom/vim-markdown-preview.git
 [submodule "vim/bundle/tabular"]
 	path = vim/bundle/tabular
 	url = git://github.com/godlygeek/tabular.git
-[submodule "vim/bundle/vim-slime"]
-	path = vim/bundle/vim-slime
-	url = git://github.com/jpalardy/vim-slime.git
-[submodule "vim/bundle/vim-endwise"]
-	path = vim/bundle/vim-endwise
-	url = git://github.com/tpope/vim-endwise.git
-[submodule "vim/bundle/VimClojure"]
-	path = vim/bundle/VimClojure
-	url = git://github.com/vim-scripts/VimClojure
 [submodule "vim/bundle/ctrlp.vim"]
 	path = vim/bundle/ctrlp.vim
 	url = git://github.com/kien/ctrlp.vim.git
@@ -40,9 +25,6 @@
 [submodule "vim/bundle/vim-airline"]
 	path = vim/bundle/vim-airline
 	url = https://github.com/vim-airline/vim-airline
-[submodule "vim/bundle/vim-elixir"]
-	path = vim/bundle/vim-elixir
-	url = https://github.com/elixir-lang/vim-elixir.git
 [submodule "fonts"]
 	path = fonts
 	url = https://github.com/powerline/fonts.git
