@@ -20,6 +20,10 @@ Then edit your .bashrc file to include the following..
     source ~/.bash/completions
     source ~/.bash/config
 
+
+For powerline support and symbols in Vim and tmux, run the OS-specific install script in the fonts directory. I've had the most luck with DejaVu Sans Mono across Windows, MacOS and Linux.
+
+
 ## Configuration
 
 #### PS1 Prompt
