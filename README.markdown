@@ -48,12 +48,22 @@ Should work under WSL, MacOS and Linux
 See the basrc_sample script - which can be copied to your own .bashrc file.  
 https://github.com/58bits/dotfiles/blob/master/bashrc_sample
 
-Initial Windows Subsystem for Linux support is in the bashrc_sample file.
+Initial Windows Subsystem for Linux support is in the bashrc_sample file. 
+
+Note however, that the colors under Windows Console / WSL will not match those of a standard x-term256 terminal - in particular the lack of support for bold or italic fonts. Here are a few links on the topic.  
+https://blogs.msdn.microsoft.com/commandline/2017/08/02/updating-the-windows-console-colors/  
+https://github.com/Microsoft/vscode/issues/7556#issuecomment-309307794  
+https://winaero.com/blog/bash-look-ubuntu-terminal-windows-10/  
+
+I've included a modified set of directory LS colors in dircolors-custom, which will be symlinked to ${HOME}/.dircolors after running install.sh.
+
+For Vim and tmux - especially with custom themes, vim-airline etc., the best support for existing themes and terminal colors comes via mintty and wslbridge. Gore Liu has an excellent solution - wsl-terminal at https://github.com/goreliu/wsl-terminal
+
 
 ## Features
 
 Nice PS1 prompt from Wayne E. Seguin [http://beginrescueend.com/ of RVM fame](http://beginrescueend.com/) which can be found in the contrib section of RVM.  
-https://github.com/wayneeseguin/rvm/blob/master/contrib/ps1_functions
+https://github.com/wayneeseguin/rvm/blob/master/contrib/ps1_functions  
 A copy of the function is also in the bash/functions directory - so that
 it can be sourced without RVM is installed.
 
@@ -61,7 +71,7 @@ Alternative PS1 prompt from Martin Gondermann's bash-git-prompt.
 https://github.com/magicmonty/bash-git-prompt
 
 Includes git-branch-status with a `gbs` wrapper function in bash/aliases
-Useful with the 'fast' \_\_git_ps1 based PS1 prompt shown in bashrc_sample.
+Useful with the 'fast' \_\_git_ps1 based PS1 prompt shown in bashrc_sample.  
 https://github.com/bill-auger/git-branch-status/
 
 The Bitstream Vera Sans Mono fonts are also included in the repo:  
