@@ -54,10 +54,6 @@ set smartcase
 set number
 set numberwidth=5
 
-" Vim-slime settings
-let g:slime_target = "tmux"
-
-
 "mark syntax errors with :signs
 let g:syntastic_enable_signs=1
 
@@ -153,7 +149,7 @@ if &diff
 endif
 
 " Color scheme
-colorscheme daring-dark
+colorscheme daring-dark-wsl
 highlight NonText guibg=#060606
 highlight Folded  guibg=#0A0A0A guifg=#9090D0
 
@@ -362,6 +358,8 @@ nmap <Leader>md :%!/usr/local/bin/Markdown.pl --html4tags<CR>
 " Automatic fold settings for specific files. Uncomment to use.
 " autocmd FileType ruby setlocal foldmethod=syntax
 " autocmd FileType css  setlocal foldmethod=indent shiftwidth=2 tabstop=2
+"
+let g:airline_theme='bdark'
 
 " For the MakeGreen plugin and Ruby RSpec. Uncomment to use.
 " autocmd BufNewFile,BufRead *_spec.rb compiler rspec

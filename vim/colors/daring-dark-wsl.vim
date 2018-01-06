@@ -9,7 +9,7 @@ if exists("syntax_on")
   syntax reset
 endif
 
-let g:colors_name = "daring-dark"
+let g:colors_name = "daring-dark-wsl"
 
 " Ctrl-P matches
 hi CtrlPMatch ctermfg=Yellow guifg=Yellow
@@ -38,21 +38,21 @@ hi ErrorMsg   ctermfg=White	ctermbg=DarkRed             guifg=White guibg=Red
 hi FoldColumn ctermfg=DarkBlue ctermbg=Grey             guifg=DarkBlue guibg=Grey	    
 hi Folded     ctermbg=Grey	ctermfg=DarkBlue            guifg=DarkBlue  guibg=LightGrey 
 hi IncSearch  cterm=reverse	                            gui=reverse
-hi LineNr     ctermfg=239	                            guifg=#4e4e4e
-"hi ModeMsg    cterm=bold                                gui=bold
+hi LineNr     ctermfg=239	                              guifg=#4e4e4e
+hi ModeMsg    ctermfg=Black                             guifg=Black
 hi MoreMsg    ctermfg=DarkGreen                         gui=bold guifg=SeaGreen
 hi NonText    ctermfg=Blue                              gui=bold guifg=gray guibg=white
 hi Pmenu      ctermfg=Blue ctermbg=232                  gui=bold guibg=#222222
 hi PmenuSel   ctermfg=193 ctermbg=233                   guifg=#d7afff guibg=Black
 hi Question   ctermfg=DarkGreen                         gui=bold guifg=SeaGreen
-hi Search     ctermfg=250 ctermbg=238                    guifg=#bcbcbc guibg=#444444   
+hi Search     ctermfg=250 ctermbg=238                   guifg=#bcbcbc guibg=#444444   
 hi SpecialKey ctermfg=DarkBlue                          guifg=Blue
-hi StatusLine cterm=reverse ctermbg=White ctermfg=Blue  gui=reverse guifg=#5f5fff guibg=White      
+hi StatusLine cterm=reverse ctermbg=White ctermfg=Black gui=reverse guifg=#5f5fff guibg=White      
 hi StatusLineNC	ctermbg=Black ctermfg=Blue              guifg=#5f5fff guibg=Black      
 hi Title      ctermfg=DarkMagenta                       gui=bold guifg=Magenta
 hi VertSplit  cterm=reverse	                            gui=reverse guifg=#dddddd guibg=#222222
 hi Visual     ctermbg=NONE	cterm=reverse               gui=reverse guibg=NONE
-hi VisualNOS  cterm=underline,bold                      gui=underline,bold
+hi VisualNOS  cterm=underline                           gui=underline,bold
 hi WarningMsg ctermfg=DarkRed                           guifg=Red
 hi WildMenu   ctermfg=Black	ctermbg=Yellow              guifg=Black guibg=Yellow    
 hi Directory  ctermfg=Blue ctermbg=NONE                 guifg=#5f5fff guibg=NONE    
