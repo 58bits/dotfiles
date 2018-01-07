@@ -4,7 +4,7 @@
 
 ## Installation
 
-    git clone git://github.com/58bits/dotfiles ~/.dotfiles
+    git clone https://github.com/58bits/dotfiles.git ~/.dotfiles
     cd ~/.dotfiles
     git submodule init
     git submodule update
