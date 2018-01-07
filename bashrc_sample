@@ -209,12 +209,17 @@ update_PS1 () {
   git=$(__git_ps1)
 
   if [ -z "$git" ]; then
-    git_trimmed=""
+    git_prompt=""
   else
     git_trimmed=${git##*( )}" " # trim leading, and add a trailing space
+    if [[ $git_trimmed == *"master"* ]]; then
+      git_prompt="\[\e[35m\]$git_trimmed\[\e[m\]" #warning color if on master
+    else
+      git_prompt="\[\e[32m\]$git_trimmed\[\e[m\]" #green for any other branch
+    fi
   fi
 
-  PS1="\[\e[32m\]\u\[\e[m\]@\[\e[36m\]\H\[\e[m\]\[\e[33m\]:\[\e[m\]\[\e[33m\]\w\[\e[m\]\n\[\e[35m\]$git_trimmed\[\e[m\]$PROMPT"
+  PS1="\[\e[32m\]\u\[\e[m\]@\[\e[36m\]\H\[\e[m\]\[\e[33m\]:\[\e[m\]\[\e[33m\]\w\[\e[m\]\n$git_prompt$PROMPT"
 }
 
 shopt -u promptvars
