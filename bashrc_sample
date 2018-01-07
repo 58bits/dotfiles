@@ -202,7 +202,8 @@ fi
 # Own rolled super fast prompt if not using .bash-git-prompt.sh or Wayne's
 # ps1_functions above. Ideal for WSL, or slower machines.
 # http://ezprompt.net/
-GIT_PS1_SHOWDIRTYSTATE='y' #adding more GIT_PS1 options will slow things down.
+# adding more GIT_PS1 options will slow things down.
+GIT_PS1_SHOWDIRTYSTATE=true 
 PROMPT=∴
 
 update_PS1 () {
