@@ -208,25 +208,46 @@ fi
 # GIT_PS1_HIDE_IF_PWD_IGNORED=true
 export GIT_PS1_SHOWDIRTYSTATE=true 
 export GIT_PS1_SHOWUPSTREAM="auto"
-PROMPT=∴
+export PS1_POWERLINE_SYMBOLS=true
 
 update_PS1 () {
   git=$(__git_ps1)
+  if [ -z "$PS1_POWERLINE_SYMBOLS" ]; then
+    prompt=">"
+    if [ -n "$git" ]; then
+      prompt=${git##*( )}" $prompt" # trim leading, and add a trailing space and prompt
+      if [[ $prompt == *"master"* ]]; then
+        prompt="\[\e[31m\]$prompt\[\e[m\]" #warning color if on master
+      else
+        prompt="\[\e[32m\]$prompt\[\e[m\]" #green for any other branch
+      fi
+    fi  
 
-  if [ -z "$git" ]; then
-    git_prompt=""
-  else
-    git_trimmed=${git##*( )}" " # trim leading, and add a trailing space
-    if [[ $git_trimmed == *"master"* ]]; then
-      git_prompt="\[\e[31m\]$git_trimmed\[\e[m\]" #warning color if on master
-    else
-      git_prompt="\[\e[32m\]$git_trimmed\[\e[m\]" #green for any other branch
-    fi
-  fi
+    PS1="\[\e[32m\]\u\[\e[m\]@\[\e[36m\]\H\[\e[m\]\[\e[33m\]:\[\e[m\]\[\e[33m\]\w\[\e[m\]\n$prompt"
+  else 
+    left_separator_main=''  # /!\ you don't need to install Powerline
+    left_separator_sub=''   #   you only need fonts patched with
+    right_separator_main='' #   Powerline symbols or the standalone
+    right_separator_sub=''  #   PowerlineSymbols.otf font
 
-  PS1="\[\e[32m\]\u\[\e[m\]@\[\e[36m\]\H\[\e[m\]\[\e[33m\]:\[\e[m\]\[\e[33m\]\w\[\e[m\]\n$git_prompt$PROMPT"
+    prompt=">"
+
+    if [ -n "$git" ]; then
+      prompt=${git##*( )}" $prompt" # trim leading spaces and add prompt
+      if [[ $prompt == *"master"* ]]; then
+        prompt="\[\e[31m\]$prompt\[\e[m\]" #warning color if on master
+      else
+        prompt="\[\e[32m\]$prompt\[\e[m\]" #green for any other branch
+      fi
+    fi  
+    
+    username="\[\e[41m\]\[\e[97m\]\u\[\e[m\]\[\e[47m\]\[\e[31m\]$left_separator_main\[\e[m\]"
+    hostname="\[\e[47m\]\[\e[30m\]\H\[\e[m\]\[\e[43m\]\[\e[37m\]$left_separator_main\[\e[m\]"
+    directory="\[\e[43m\]\[\e[30m\]\w\[\e[m\]\[\e[33m\]$left_separator_main\[\e[m\]"
+    PS1="$username$hostname$directory\n$prompt"
+
+  fi  
 }
-
 shopt -u promptvars
 PROMPT_COMMAND=update_PS1
 
