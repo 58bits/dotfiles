@@ -234,19 +234,19 @@ update_PS1 () {
     prompt="$left_separator_main"
 
     if [ -n "$git" ]; then
-      prompt=${git#" "} # trim leading spaces
-      prompt="${prompt//\(}" # remove left paren
+      #prompt=${git#" "} # trim leading spaces
+      prompt="${git//\(}" # remove left paren
       prompt="${prompt//\)}" # remove right paren
       if [[ $prompt == *"master"* ]]; then
-        prompt="\[\e[41m\]\[\e[97m\]$prompt\[\e[m\]\[\e[31m\]$left_separator_main\[\e[m\]" #warning color if on master
+        prompt="\[\e[48;5;75m\]\[\e[30m\]$prompt \[\e[m\]\[\e[38;5;75m\]$left_separator_main\[\e[m\]" #warning color if on master
       else
-        prompt="\[\e[46m\]\[\e[97m\]$prompt\[\e[m\]\[\e[36m\]$left_separator_main\[\e[m\]" #green for any other branch
+        prompt="\[\e[48;5;79m\]\[\e[30m\]$prompt \[\e[m\]\[\e[38;5;79m\]$left_separator_main\[\e[m\]" #green for any other branch
       fi
     fi  
     
-    username="\[\e[41m\]\[\e[97m\]\u\[\e[m\]\[\e[47m\]\[\e[31m\]$left_separator_main\[\e[m\]"
-    hostname="\[\e[47m\]\[\e[30m\]\H\[\e[m\]\[\e[43m\]\[\e[37m\]$left_separator_main\[\e[m\]"
-    directory="\[\e[43m\]\[\e[30m\]\w\[\e[m\]\[\e[33m\]$left_separator_main\[\e[m\]"
+    username="\[\e[41m\]\[\e[97m\] \u \[\e[m\]\[\e[47m\]\[\e[31m\]$left_separator_main\[\e[m\]"
+    hostname="\[\e[47m\]\[\e[30m\] \H \[\e[m\]\[\e[48;5;228m\]\[\e[37m\]$left_separator_main\[\e[m\]"
+    directory="\[\e[48;5;228m\]\[\e[30m\] \w \[\e[m\]\[\e[38;5;228m\]$left_separator_main\[\e[m\]"
     PS1="$username$hostname$directory\n$prompt"
 
   fi  
