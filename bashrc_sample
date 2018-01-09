@@ -201,6 +201,7 @@ fi
 # 3 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Own rolled super fast prompt if not using .bash-git-prompt.sh or Wayne's
 # ps1_functions above. Ideal for WSL, or slower machines.
+# https://misc.flogisoft.com/bash/tip_colors_and_formatting
 # http://ezprompt.net/
 # GIT_PS1_SHOWSTASHSTATE=true
 # GIT_PS1_SHOWUNTRACKEDFILES=true
