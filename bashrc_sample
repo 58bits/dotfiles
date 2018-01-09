@@ -215,7 +215,7 @@ update_PS1 () {
   if [ -z "$PS1_POWERLINE_SYMBOLS" ]; then
     prompt=">"
     if [ -n "$git" ]; then
-      prompt=${git##*( )}" $prompt" # trim leading, and add a trailing space and prompt
+      prompt=${git#" "}" $prompt" # trim leading, and add a trailing space and prompt
       if [[ $prompt == *"master"* ]]; then
         prompt="\[\e[31m\]$prompt\[\e[m\]" #warning color if on master
       else
@@ -233,7 +233,7 @@ update_PS1 () {
     prompt="$left_separator_main"
 
     if [ -n "$git" ]; then
-      prompt="${git##*( )}" # trim leading spaces
+      prompt=${git#" "} # trim leading spaces
       prompt="${prompt//\(}" # remove left paren
       prompt="${prompt//\)}" # remove right paren
       if [[ $prompt == *"master"* ]]; then
