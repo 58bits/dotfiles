@@ -230,14 +230,16 @@ update_PS1 () {
     right_separator_main='' #   Powerline symbols or the standalone
     right_separator_sub=''  #   PowerlineSymbols.otf font
 
-    prompt=">"
+    prompt="$left_separator_main"
 
     if [ -n "$git" ]; then
-      prompt=${git##*( )}" $prompt" # trim leading spaces and add prompt
+      prompt="${git##*( )}" # trim leading spaces
+      prompt="${prompt//\(}" # remove left paren
+      prompt="${prompt//\)}" # remove right paren
       if [[ $prompt == *"master"* ]]; then
-        prompt="\[\e[31m\]$prompt\[\e[m\]" #warning color if on master
+        prompt="\[\e[41m\]\[\e[97m\]$prompt\[\e[m\]\[\e[31m\]$left_separator_main\[\e[m\]" #warning color if on master
       else
-        prompt="\[\e[32m\]$prompt\[\e[m\]" #green for any other branch
+        prompt="\[\e[46m\]\[\e[97m\]$prompt\[\e[m\]\[\e[36m\]$left_separator_main\[\e[m\]" #green for any other branch
       fi
     fi  
     
@@ -248,6 +250,7 @@ update_PS1 () {
 
   fi  
 }
+
 shopt -u promptvars
 PROMPT_COMMAND=update_PS1
 
