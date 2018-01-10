@@ -231,7 +231,7 @@ update_PS1 () {
     right_separator_main='' #   Powerline symbols or the standalone
     right_separator_sub=''  #   PowerlineSymbols.otf font
 
-    prompt="$left_separator_main"
+    prompt=""
 
     if [ -n "$git" ]; then
       #prompt=${git#" "} # trim leading spaces
