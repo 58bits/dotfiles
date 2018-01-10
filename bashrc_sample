@@ -201,59 +201,8 @@ fi
 # 3 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Own rolled super fast prompt if not using .bash-git-prompt.sh or Wayne's
 # ps1_functions above. Ideal for WSL, or slower machines.
-# https://misc.flogisoft.com/bash/tip_colors_and_formatting
-# http://ezprompt.net/
-# GIT_PS1_SHOWSTASHSTATE=true
-# GIT_PS1_SHOWUNTRACKEDFILES=true
-# GIT_PS1_SHOWCOLORHINTS=true
-# GIT_PS1_HIDE_IF_PWD_IGNORED=true
-export GIT_PS1_SHOWDIRTYSTATE=true 
-export GIT_PS1_SHOWUPSTREAM="auto"
-export PS1_POWERLINE_SYMBOLS=true
-
-update_PS1 () {
-  git=$(__git_ps1)
-  if [ -z "$PS1_POWERLINE_SYMBOLS" ]; then
-    prompt=">"
-    if [ -n "$git" ]; then
-      prompt=${git#" "}" $prompt" # trim leading, and add a trailing space and prompt
-      if [[ $prompt == *"master"* ]]; then
-        prompt="\[\e[31m\]$prompt\[\e[m\]" #warning color if on master
-      else
-        prompt="\[\e[32m\]$prompt\[\e[m\]" #green for any other branch
-      fi
-    fi  
-
-    PS1="\[\e[32m\]\u\[\e[m\]@\[\e[36m\]\H\[\e[m\]\[\e[33m\]:\[\e[m\]\[\e[33m\]\w\[\e[m\]\n$prompt"
-  else 
-    left_separator_main=''  # /!\ you don't need to install Powerline
-    left_separator_sub=''   #   you only need fonts patched with
-    right_separator_main='' #   Powerline symbols or the standalone
-    right_separator_sub=''  #   PowerlineSymbols.otf font
-
-    prompt=""
-
-    if [ -n "$git" ]; then
-      #prompt=${git#" "} # trim leading spaces
-      prompt="${git//\(}" # remove left paren
-      prompt="${prompt//\)}" # remove right paren
-      if [[ $prompt == *"master"* ]]; then
-        prompt="\[\e[48;5;75m\]\[\e[30m\]$prompt \[\e[m\]\[\e[38;5;75m\]$left_separator_main\[\e[m\]" #warning color if on master
-      else
-        prompt="\[\e[48;5;79m\]\[\e[30m\]$prompt \[\e[m\]\[\e[38;5;79m\]$left_separator_main\[\e[m\]" #green for any other branch
-      fi
-    fi  
-    
-    username="\[\e[41m\]\[\e[97m\] \u \[\e[m\]\[\e[47m\]\[\e[31m\]$left_separator_main\[\e[m\]"
-    hostname="\[\e[47m\]\[\e[30m\] \H \[\e[m\]\[\e[48;5;228m\]\[\e[37m\]$left_separator_main\[\e[m\]"
-    directory="\[\e[48;5;228m\]\[\e[30m\] \w \[\e[m\]\[\e[38;5;228m\]$left_separator_main\[\e[m\]"
-    PS1="$username$hostname$directory\n$prompt"
-
-  fi  
-}
-
-shopt -u promptvars
-PROMPT_COMMAND=update_PS1
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+source "$HOME/.dotfiles/fast-prompt.sh"
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Local settings
