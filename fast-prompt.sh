@@ -6,6 +6,7 @@
 # https://misc.flogisoft.com/bash/tip_colors_and_formatting
 
 # The more git options you enable, the slower the prompt.
+export ENABLE_GIT_STATUS=true
 # GIT_PS1_SHOWSTASHSTATE=true
 # GIT_PS1_SHOWUNTRACKEDFILES=true
 # GIT_PS1_SHOWCOLORHINTS=true
@@ -17,37 +18,20 @@ export GIT_PS1_SHOWUPSTREAM="auto"
 # There is a sub-repo of modified powerline fonts in the
 # .dotfiles/fonts directory. Run the OS-specific installer to
 # install the fonts.
-export PS1_POWERLINE_SYMBOLS=true
+export ENABLE_POWERLINE_SYMBOLS=true
 
 update_PS1 () {
-  if [ -n "$(type -t __git_ps1)" ]; then
+  if [ -n "$ENABLE_GIT_STATUS" ] && [ "$ENABLE_GIT_STATUS" = true ]  && [ -n "$(type -t __git_ps1)" ]; then
     git=$(__git_ps1)
   fi
 
-  if [ -z "$PS1_POWERLINE_SYMBOLS" ]; then
-    prompt=">"
-    if [ -n "$git" ]; then
-      prompt=${git#" "}" $prompt" # trim leading, and add a trailing space and prompt
-      if [[ $prompt == *"master"* ]]; then
-        prompt="\[\e[31m\]$prompt\[\e[m\]" #warning color if on master
-      else
-        prompt="\[\e[32m\]$prompt\[\e[m\]" #green for any other branch
-      fi
-    fi  
+  if [ -n "$ENABLE_POWERLINE_SYMBOLS" ] && [ "$ENABLE_POWERLINE_SYMBOLS" = true ]; then
+    prompt=""
 
-    username="\[\e[32m\]\u\[\e[m\]"
-    hostname="\[\e[36m\]\H\[\e[m\]"
-    directory="\[\e[33m\]:\[\e[m\]\[\e[33m\]\w\[\e[m\]"
-
-    PS1="$username@$hostname$directory\n$prompt"
-
-  else 
     left_separator_main=''  # /!\ you don't need to install Powerline
     left_separator_sub=''   #   you only need fonts patched with
     right_separator_main='' #   Powerline symbols or the standalone
     right_separator_sub=''  #   PowerlineSymbols.otf font
-
-    prompt=""
 
     if [ -n "$git" ]; then
       #prompt=${git#" "} # trim leading spaces
@@ -65,6 +49,23 @@ update_PS1 () {
     directory="\[\e[48;5;228m\]\[\e[30m\] \w \[\e[m\]\[\e[38;5;228m\]$left_separator_main\[\e[m\]"
 
     PS1="$username$hostname$directory\n$prompt"
+
+  else 
+    prompt=">"
+    if [ -n "$git" ]; then
+      prompt=${git#" "}" $prompt" # trim leading, and add a trailing space and prompt
+      if [[ $prompt == *"master"* ]]; then
+        prompt="\[\e[31m\]$prompt\[\e[m\]" #warning color if on master
+      else
+        prompt="\[\e[32m\]$prompt\[\e[m\]" #green for any other branch
+      fi
+    fi  
+
+    username="\[\e[32m\]\u\[\e[m\]"
+    hostname="\[\e[36m\]\H\[\e[m\]"
+    directory="\[\e[33m\]:\[\e[m\]\[\e[33m\]\w\[\e[m\]"
+
+    PS1="$username@$hostname$directory\n$prompt"
 
   fi  
 }
