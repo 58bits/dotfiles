@@ -27,8 +27,7 @@ update_PS1 () {
 
   if [ -n "$ENABLE_POWERLINE_SYMBOLS" ] && [ "$ENABLE_POWERLINE_SYMBOLS" = true ]; then
     prompt=""
-
-    left_separator_main=''  # /!\ you don't need to install Powerline
+    left_separator_main=''  #   You don't need to install Powerline
     left_separator_sub=''   #   you only need fonts patched with
     right_separator_main='' #   Powerline symbols or the standalone
     right_separator_sub=''  #   PowerlineSymbols.otf font
