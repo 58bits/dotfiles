@@ -32,7 +32,9 @@ There are example (commented) PS1 prompt versions in bashrc_sample using:
 
 1. Wayne E. Seguin's excellent Bash shell prompt (see below links).
 2. Martin Gondermann's bash-git-prompt.
-3. A very fast 'own rolled' PS1 prompt with git support via \_\_git_ps1, which is ideal for WSL or slower machines.
+3. A very fast 'own rolled' PS1 prompt with git support via \_\_git_ps1, which is ideal for WSL or slower machines (see below)
+
+![fast-prompt](https://github.com/58bits/dotfiles/raw/master/fast-prompt.png "fast-prompt")
 
 #### tmux
 
