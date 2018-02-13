@@ -1,0 +1,23 @@
+{
+    "name": "infonomic-color-theme",
+    "displayName": "Infonomic Color Theme",
+    "description": "A dark color theme for VS Code",
+    "version": "0.0.1",
+    "publisher": "Infonomic",
+    "engines": {
+        "vscode": "^1.5.0"
+    },
+    "icon": "images/icon.png",
+    "categories": [
+        "Themes"
+    ],
+    "contributes": {
+        "themes": [
+            {
+                "label": "Infonomic Color Theme",
+                "uiTheme": "vs-dark",
+                "path": "./themes/Infonomic_Color_Theme.thTheme"
+            }
+        ]
+    }
+}
