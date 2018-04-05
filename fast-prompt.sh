@@ -7,11 +7,11 @@
 
 # The more git options you enable, the slower the prompt.
 export ENABLE_GIT_STATUS=true
-# GIT_PS1_SHOWSTASHSTATE=true
-# GIT_PS1_SHOWUNTRACKEDFILES=true
-# GIT_PS1_SHOWCOLORHINTS=true
-# GIT_PS1_HIDE_IF_PWD_IGNORED=true
-export GIT_PS1_SHOWDIRTYSTATE=true 
+# export GIT_PS1_SHOWSTASHSTATE=true
+# export GIT_PS1_SHOWUNTRACKEDFILES=true
+# export GIT_PS1_SHOWCOLORHINTS=true
+# export GIT_PS1_HIDE_IF_PWD_IGNORED=true
+# export GIT_PS1_SHOWDIRTYSTATE=true 
 # export GIT_PS1_SHOWUPSTREAM="auto"
 
 # Enable powerline symbols. You don't need to install powerline.
@@ -41,6 +41,8 @@ update_PS1 () {
       else
         prompt="\[\e[48;5;79m\]\[\e[30m\]$prompt \[\e[m\]\[\e[38;5;79m\]$left_separator_main\[\e[m\]" #green for any other branch
       fi
+    else
+      prompt=">"  
     fi  
     
     username="\[\e[41m\]\[\e[97m\] \u \[\e[m\]\[\e[47m\]\[\e[31m\]$left_separator_main\[\e[m\]"
