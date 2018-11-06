@@ -1,0 +1,11 @@
+https://docs.microsoft.com/en-us/windows/security/identity-protection/credential-guard/credential-guard-manage
+
+https://www.microsoft.com/en-us/download/details.aspx?id=53337
+
+1) From Administrator-level PS1 prompt
+
+ Set-ExecutionPolicy RemoteSigned
+ 
+2) Run the tool
+
+ .\DG_Readiness_Tool_v3.6.ps1 -Disable -AutoReboot
