@@ -65,19 +65,24 @@ tmux_conf_theme_root_fg=${tmux_conf_theme_root_fg:-'none'}
 tmux_conf_theme_root_bg=${tmux_conf_theme_root_bg:-'none'}
 tmux_conf_theme_root_attr=${tmux_conf_theme_root_attr:-'bold,blink'}
 
-
 tmux set -g status-bg colour235 \; set -g status-fg white \;\
     set -g message-fg white \; set -g message-bg colour235 \;\
     set -g message-attr bright
     
-#status_left="#[fg=black,dim,bg=#ffff00]#(~/.tmux/uptime.sh)#[fg=#ffff00,bg=#005f5f]$tmux_conf_theme_left_separator_main #[fg=white,bg=#005f5f]#(~/.tmux/hostname.sh)#[fg=#005f5f,bg=#005f87]$tmux_conf_theme_left_separator_main #[fg=white,bg=#005faf]#(~/.tmux/lan_ip.sh)#[fg=#005faf,bg=colour235]$tmux_conf_theme_left_separator_main"
+# -- left status
+
+status_left=""
 status_left="#[fg=black,dim,bg=#d7d787]#(~/.tmux/uptime.sh)#[fg=#d7d787,bg=#005f5f]$tmux_conf_theme_left_separator_main "
 status_left=${status_left}"#[fg=white,bg=#005f5f]#(~/.tmux/hostname.sh)#[fg=#005f5f,bg=#005f87]$tmux_conf_theme_left_separator_main "
 status_left=${status_left}"#[fg=white,bg=#005faf]#(~/.tmux/lan_ip.sh)#[fg=#005faf,bg=colour235]$tmux_conf_theme_left_separator_main"
 
-# client prefix bug - likely in windows Terminal causes the right status bar to line break
-#status_right="#{?client_prefix,$tmux_conf_theme_prefix,} #(~/.tmux/date_time_formated.sh)"
-status_right="#[fg=#005faf,bg=colour235]$tmux_conf_theme_right_separator_main#[fg=white,bg=#005faf]#(~/.tmux/date_time_formated.sh)"
+# -- right status
+
+status_right=""
+status_right=#{?client_prefix,$tmux_conf_theme_prefix,}
+status_right=${status_right}"#[fg=#005faf,bg=colour235]$tmux_conf_theme_right_separator_main#[fg=white,bg=#005faf]#(~/.tmux/date_time_formated.sh)"
+
+# -- set left and right status length and properties
 
 tmux  set -g status-left-length 1000 \; set -g status-left "$status_left" \;\
     set -g status-right-length 1000 \; set -g status-right "$status_right"
