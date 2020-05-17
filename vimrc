@@ -94,21 +94,21 @@ if has("autocmd")
 
   " Put these in an autocmd group, so that we can delete them easily.
   augroup vimrcEx
-  au!
+    au!
 
-  " For all text files set 'textwidth' to 78 characters.
-  " autocmd FileType text setlocal textwidth=78
+    " For all text files set 'textwidth' to 78 characters.
+    " autocmd FileType text setlocal textwidth=78
 
-  " When editing a file, always jump to the last known cursor position.
-  " Don't do it when the position is invalid or when inside an event handler
-  " (happens when dropping a file on gvim).
-  autocmd BufReadPost *
-    \ if line("'\"") > 0 && line("'\"") <= line("$") |
-    \   exe "normal g`\"" |
-    \ endif
+    " When editing a file, always jump to the last known cursor position.
+    " Don't do it when the position is invalid or when inside an event handler
+    " (happens when dropping a file on gvim).
+    autocmd BufReadPost *
+          \ if line("'\"") > 0 && line("'\"") <= line("$") |
+          \   exe "normal g`\"" |
+          \ endif
 
-  " Automatically load .vimrc source when saved
-  autocmd BufWritePost .vimrc source $MYVIMRC
+    " Automatically load .vimrc source when saved
+    autocmd BufWritePost .vimrc source $MYVIMRC
 
   augroup END
 
@@ -317,9 +317,9 @@ set tags=./tags;
 let g:fuf_splitPathMatching=1
 
 fun! TrimWhitespace()
-    let l:save = winsaveview()
-    %s/\s\+$//e
-    call winrestview(l:save)
+  let l:save = winsaveview()
+  %s/\s\+$//e
+  call winrestview(l:save)
 endfun
 
 command! TrimWhitespace call TrimWhitespace()
@@ -361,36 +361,44 @@ nmap <Leader>md :%!/usr/local/bin/Markdown.pl --html4tags<CR>
 
 " For the MakeGreen plugin and Ruby RSpec. Uncomment to use.
 " autocmd BufNewFile,BufRead *_spec.rb compiler rspec
-  if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-  endif
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
 
-  " unicode symbols
-  let g:airline_left_sep = '»'
-  let g:airline_left_sep = '▶'
-  let g:airline_right_sep = '«'
-  let g:airline_right_sep = '◀'
-  let g:airline_symbols.crypt = '🔒'
-  let g:airline_symbols.linenr = '␊'
-  let g:airline_symbols.linenr = '␤'
-  let g:airline_symbols.linenr = '¶'
-  let g:airline_symbols.maxlinenr = '☰'
-  let g:airline_symbols.maxlinenr = ''
-  let g:airline_symbols.branch = '⎇'
-  let g:airline_symbols.paste = 'ρ'
-  let g:airline_symbols.paste = 'Þ'
-  let g:airline_symbols.paste = '∥'
-  let g:airline_symbols.spell = 'Ꞩ'
-  let g:airline_symbols.notexists = '∄'
-  let g:airline_symbols.whitespace = 'Ξ'
-  " powerline symbols
-  let g:airline_left_sep = ''
-  let g:airline_left_alt_sep = ''
-  let g:airline_right_sep = ''
-  let g:airline_right_alt_sep = ''
-  let g:airline_symbols.branch = ''
-  let g:airline_symbols.readonly = ''
-  let g:airline_symbols.linenr = ''
+" unicode symbols
+let g:airline_left_sep = '»'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '«'
+let g:airline_right_sep = '◀'
+let g:airline_symbols.crypt = '🔒'
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.maxlinenr = '☰'
+let g:airline_symbols.maxlinenr = ''
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.spell = 'Ꞩ'
+let g:airline_symbols.notexists = '∄'
+let g:airline_symbols.whitespace = 'Ξ'
+" powerline symbols
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = ''
+
+" set vim-airline theme
+let g:airline_theme='custom'
+" The dark.vim theme override:
+"let s:airline_a_normal   = [ '#00005f' , '#d7d787' , 17  , 186 ]
+"let s:airline_b_normal   = [ '#ffffff' , '#444444' , 255 , 238 ]
+"let s:airline_c_normal   = [ '#9cffd3' , '#202020' , 85  , 234 ]
+"let g:airline#themes#dark#palette.normal = airline#themes#generate_color_map(s:airline_a_normal, s:airline_b_normal, s:airline_c_normal)
 
 " Local config
 if filereadable(".vimrc.local")
