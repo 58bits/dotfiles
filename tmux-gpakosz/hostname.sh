@@ -31,7 +31,6 @@ _hostname() {
   fi
 
   echo "$hostname"
-  return 0
 }
 
 _hostname

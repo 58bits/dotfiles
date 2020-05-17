@@ -15,7 +15,7 @@ _uptime() {
       now=$(date +%s)
   esac
   # shellcheck disable=SC1004
-  formated_uptime=$(awk -v boot="$boot" -v now="$now" '
+  awk -v boot="$boot" -v now="$now" '
     BEGIN {
       uptime = now - boot
       d = int(uptime / 86400)
@@ -23,16 +23,11 @@ _uptime() {
       m = int(uptime / 60) % 60
       s = int(uptime) % 60
 
-      df = (d > 0) ? d"d " : ""
-      hf = (h > 0) ? h"h " : ""
-      mf = (m > 0) ? m"m " : ""
-      sf = (s > 0) ? s"s " : ""
-      
-      print df hf mf;
-    }')
-  
-  echo "" "↑ $formated_uptime"
-  return 0
+      system("tmux  set -g @uptime_d " d + 0 " \\; " \
+                   "set -g @uptime_h " h + 0 " \\; " \
+                   "set -g @uptime_m " m + 0 " \\; " \
+                   "set -g @uptime_s " s + 0)
+    }'
 }
 
 _uptime
