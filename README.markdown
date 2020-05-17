@@ -10,8 +10,8 @@
     git submodule update
     ./install.sh
 
-    (Note - for future submodule updates call...)
-    git submodule foreach git pull origin master
+    (Note: to pull future upstream changes for all submodules call...)
+    git submodule update --remote
 
 Then edit your .bashrc file to include the following..
 
