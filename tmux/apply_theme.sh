@@ -79,7 +79,7 @@ _apply_theme() {
   # -- right status
 
   status_right=""
-  #status_right=#{?client_prefix,$tmux_conf_theme_prefix,}
+  status_right=#{?client_prefix,$tmux_conf_theme_prefix,}
   status_right=${status_right}"#[fg=#005faf,bg=colour235]$tmux_conf_theme_right_separator_main#[fg=white,bg=#005faf]#(~/.tmux/date_time_formated.sh)"
 
   # -- set left and right status length and properties
