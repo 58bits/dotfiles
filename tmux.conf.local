@@ -131,8 +131,8 @@ tmux_conf_theme_pairing_attr='none'
 
 # prefix indicator
 # https://github.com/microsoft/terminal/issues/5973
-tmux_conf_theme_prefix=' '
-#tmux_conf_theme_prefix='⌨ '            # U+2328
+# tmux_conf_theme_prefix=' '
+tmux_conf_theme_prefix='⌨ '            # U+2328
 tmux_conf_theme_prefix_fg='none'
 tmux_conf_theme_prefix_bg='none'
 tmux_conf_theme_prefix_attr='none'
