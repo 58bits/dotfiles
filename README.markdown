@@ -1,6 +1,6 @@
 # Anthony Bouch's Dot Files
 
-![DotFiles](https://github.com/58bits/dotfiles/raw/master/screenshot.png "Anthony's Dot Files")
+![DotFiles](https://github.com/58bits/dotfiles/raw/master/screenshot.png?v=2 "Anthony's Dot Files")
 
 ## Installation
 
