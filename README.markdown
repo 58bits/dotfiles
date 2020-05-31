@@ -10,8 +10,7 @@
     git submodule update
     ./install.sh
 
-    (Note: to pull future upstream changes for all submodules call...)
-    git submodule update --remote
+(Note: to pull future upstream changes for all submodules call `git submodule update --remote`)
 
 Then edit your .bashrc file to include the following..
 
@@ -32,7 +31,7 @@ There are example (commented) PS1 prompt versions in bashrc_sample using:
 
 1. Wayne E. Seguin's excellent Bash shell prompt (see below links).
 2. Martin Gondermann's bash-git-prompt.
-3. A very fast 'own rolled' PS1 prompt with git support via \_\_git_ps1, which is ideal for WSL or slower machines (see below)
+3. A very fast 'own rolled' PS1 prompt with git support via \_\_git_ps1, which is ideal for slower machines (see below)
 
 <img src="https://github.com/58bits/dotfiles/raw/master/fast-prompt.png" alt="fast-prompt" width=540 height=280 style="width: 540px; height: 280px; margin-left: 0.5em;" />
 
@@ -42,30 +41,22 @@ Note - I've temporarily removed the sub-repo to Gregory Pakosz's amazing tmux co
 https://github.com/gpakosz/.tmux  
 The slow shell spawn times in WSL meant that Gregory's config was very slow to load.
 
-Instead, I've trimmed down the settings and extracted Gregory's helper functions into the tmux directory. There is a sample tmux.conf and tmux.conf.local in the .dotfiles directory which will be symlinked as ~/.tmux.conf and ~/.tmux.config.local after running install.sh. Powerline modified fonts are also included as a sub-repo, which you'll need for Powerline symbol support in both tmux and vim-airline.
+My tmux configuration is based on a trimmed down version of Gregory Pakosz's amazing tmux config  
+https://github.com/gpakosz/.tmux with shell helper functions extracted into the tmux directory, combined with a few additional helper scripts from Erik Westrup's excellent setup here https://github.com/erikw/tmux-powerline. There is a sample tmux.conf and tmux.conf.local in the .dotfiles directory which will be symlinked as ~/.tmux.conf and ~/.tmux.config.local after running install.sh. Powerline modified fonts are also included as a sub-repo, which you'll need for Powerline symbol support in both tmux and vim-airline.
 
 ## Environment
 
-Should work under WSL, MacOS and Linux
+This should all work under WSL, WSL 2, MacOS and Linux
 
 See the basrc_sample script - which can be copied to your own .bashrc file.  
-https://github.com/58bits/dotfiles/blob/master/bashrc_sample
-
-Initial Windows Subsystem for Linux support is in the bashrc_sample file. 
-
-Note however, that the colors under Windows Console / WSL will not match those of a standard x-term256 terminal - in particular the lack of support for bold or italic fonts. Here are a few links on the topic.  
-https://blogs.msdn.microsoft.com/commandline/2017/08/02/updating-the-windows-console-colors/  
-https://github.com/Microsoft/vscode/issues/7556#issuecomment-309307794  
-https://winaero.com/blog/bash-look-ubuntu-terminal-windows-10/  
+https://github.com/58bits/dotfiles/blob/master/bashrc_sample 
 
 I've included a modified set of directory LS colors in dircolors-custom, which will be symlinked to ${HOME}/.dircolors after running install.sh.
-
-For Vim and tmux - especially with custom themes, vim-airline etc., the best support for existing themes and terminal colors comes via mintty and wslbridge. Gore Liu has an excellent solution - wsl-terminal at https://github.com/goreliu/wsl-terminal
 
 
 ## Features
 
-Nice PS1 prompt from Wayne E. Seguin [http://beginrescueend.com/ of RVM fame](http://beginrescueend.com/) which can be found in the contrib section of RVM.  
+A nice PS1 prompt from Wayne E. Seguin [http://beginrescueend.com/ of RVM fame](http://beginrescueend.com/) which can be found in the contrib section of RVM.  
 https://github.com/wayneeseguin/rvm/blob/master/contrib/ps1_functions  
 A copy of the function is also in the bash/functions directory - so that it can be sourced without RVM installed.
 
@@ -83,7 +74,7 @@ http://www.58bits.com/blog/2011/03/15/beautiful-developers-font
 You'll need to update your `.gvimrc` accordingly if you choose not to use Vera Sans Mono.
 
 A git submodule to Powerline modifed fonts is located in the fonts directory  
-https://github.com/powerline/fonts
+https://github.com/powerline/fonts (although https://www.nerdfonts.com/ is a fun alternative).
 
 My ultimate Vim color theme, daring-dark.vim is now vim and gvim matched.  
 https://github.com/58bits/dotfiles/blob/master/vim/colors/daring-dark.vim
