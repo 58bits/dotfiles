@@ -37,10 +37,6 @@ There are example (commented) PS1 prompt versions in bashrc_sample using:
 
 #### tmux
 
-Note - I've temporarily removed the sub-repo to Gregory Pakosz's amazing tmux config  
-https://github.com/gpakosz/.tmux  
-The slow shell spawn times in WSL meant that Gregory's config was very slow to load.
-
 My tmux configuration is based on a trimmed down version of Gregory Pakosz's amazing tmux config  
 https://github.com/gpakosz/.tmux with shell helper functions extracted into the tmux directory, combined with a few additional helper scripts from Erik Westrup's excellent setup here https://github.com/erikw/tmux-powerline. There is a sample tmux.conf and tmux.conf.local in the .dotfiles directory which will be symlinked as ~/.tmux.conf and ~/.tmux.config.local after running install.sh. Powerline modified fonts are also included as a sub-repo, which you'll need for Powerline symbol support in both tmux and vim-airline.
 
