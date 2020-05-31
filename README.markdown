@@ -1,6 +1,6 @@
 # Anthony Bouch's Dot Files
 
-![DotFiles](https://github.com/58bits/dotfiles/raw/master/screenshot-wsl2.png "Anthony's Dot Files")
+![DotFiles](https://github.com/58bits/dotfiles/raw/master/screenshot-wsl2-b.png "Anthony's Dot Files")
 
 ## Installation
 
