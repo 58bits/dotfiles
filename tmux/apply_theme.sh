@@ -72,7 +72,7 @@ _apply_theme() {
   # -- left status
 
   status_left=""
-  status_left="#[fg=black,dim,bg=#d7d787]#(~/.tmux/uptime.sh)#[fg=#d7d787,bg=#005f5f]$tmux_conf_theme_left_separator_main "
+  status_left="#[fg=black,bg=#d7d787]#(~/.tmux/uptime.sh)#[fg=#d7d787,bg=#005f5f]$tmux_conf_theme_left_separator_main "
   status_left=${status_left}"#[fg=white,bg=#005f5f]#(~/.tmux/hostname.sh)#[fg=#005f5f,bg=#005f87]$tmux_conf_theme_left_separator_main "
   status_left=${status_left}"#[fg=white,bg=#005faf]#(~/.tmux/lan_ip.sh)#[fg=#005faf,bg=colour235]$tmux_conf_theme_left_separator_main"
 
