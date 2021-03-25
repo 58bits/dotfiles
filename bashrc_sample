@@ -151,6 +151,7 @@ source ~/.bash/config
 #
 export PATH="/usr/local/bin:$PATH"
 # if you're developing with node, add any project local binaries to the path
+export PATH="./vendor/bin:$PATH"
 export PATH="./node_modules/.bin:$PATH"
 export PATH="~/.local/bin:$PATH"
 export PATH="$(yarn global bin):$PATH"
