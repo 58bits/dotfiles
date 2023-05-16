@@ -123,3 +123,8 @@ alias pkgs="dpkg-query -f '${binary:Package}\n' -W"
 # misc
 alias reload='. ~/.bash_profile'
 
+
+# finger friendly alias to pnpm
+pp () {
+  pnpm "$@";
+}
