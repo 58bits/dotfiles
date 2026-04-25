@@ -6,7 +6,7 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
-"Will not work under Teminal.app on Mac OS X - causes certain colors and characters to 'flash'.
+"Will not work under Terminal.app on Mac OS X - causes certain colors and characters to 'flash'.
 set t_Co=256
 
 " Source pathogen. In this case it's in a bundle directory and not the
@@ -149,9 +149,10 @@ if &diff
 endif
 
 " Color scheme
-colorscheme daring-dark-wsl
+colorscheme daring-dark
 highlight NonText guibg=#060606
 highlight Folded  guibg=#0A0A0A guifg=#9090D0
+highlight Visual  cterm=NONE ctermbg=24 ctermfg=15 gui=NONE guibg=#005f87 guifg=White
 
 
 "syntax highlight shell scripts as per POSIX,
