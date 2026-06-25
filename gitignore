@@ -16,3 +16,5 @@ Thumbs.db
 tags
 
 .netrwhist
+
+**/.claude/settings.local.json

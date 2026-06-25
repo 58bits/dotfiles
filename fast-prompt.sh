@@ -72,4 +72,7 @@ update_PS1 () {
 }
 
 shopt -u promptvars
+# systemd >= 258 injects $(__systemd_osc_context_ps0) into PS0, which leaks
+# as literal text because we run with `shopt -u promptvars`. Drop it.
+unset PS0
 PROMPT_COMMAND=update_PS1
